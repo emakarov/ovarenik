@@ -1,4 +1,5 @@
 *.log
 *.pot
 *.pyc
+*/static/photologue/*
 local_settings.py
