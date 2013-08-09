@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block wrapper %}
+  <div class="container white-transp-grad bgimg" id="bgimgdiv" style="padding:0;margin:0;width:100%">
+    <div id="leftring" style="position:absolute;width:40px;height:40px;cursor:pointer;cursor:hand;">
+     <img id="wordnew" src="{{STATIC_URL}}images/word_new_ru.png" style="top:30%;position:relative;display:none;">
+    </div>
+    <div id="rightring" style="position:absolute;width:40px;height:40px;cursor:pointer;cursor:hand;">
+      <img id="playbutton" src="{{STATIC_URL}}images/buttonplay.png" style="width:20px;left:10%;top:5%;position:relative;display:none;">
+    </div>
+    <div><img id="imglogo2" src="{{STATIC_URL}}images/biglogo_2.png" style="position:absolute;width:200px;display:none;"></div>
+    <div><img id="imglogo1" src="{{STATIC_URL}}images/biglogo_1.png" style="position:absolute;width:280px;display:none;"></div>
+    <div><img id="imgfooter" src="{{STATIC_URL}}images/footer.png" style="position:absolute;width:200px;display:none;"></div>
+  </div> <!-- /container -->
+{% endblock %}

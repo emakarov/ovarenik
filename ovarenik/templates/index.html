@@ -1,0 +1,229 @@
+{% load cms_tags sekizai_tags %}
+{% load cms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Design is our passion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vegas/jquery.vegas.css" />
+    {% render_block "css" %}
+    <style>
+      body {
+        padding:0px 0 0;margin:0;
+      }
+      .navbar-fixed-top {
+      	margin-bottom: 0px;
+      }
+      .navbar-inverse .brand, .navbar-inverse .nav > li > a {
+      	color: #fff;
+      	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      }
+      .navbar-inner{
+        background: url(images/headline.png);
+      }
+      .white-transp-grad{
+         background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+         background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+         background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0)));
+         background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+         background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+         background-image: linear-gradient(top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+         background-repeat: repeat-x;
+         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 0.4)', endColorstr='rgba(255, 255, 255, 0)', GradientType=0);
+         padding: 2rem 0;
+      }    
+      .centering{
+      	float:none;
+      	margin:0 auto;
+      	}
+      	.navbar .nav > li {
+      	  float: left;
+      	  padding-left: 20px;
+      	  padding-right: 20px;
+      	}
+
+     </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+  </head>
+  <body>
+{% cms_toolbar %}    <div id="nvb" class="navbar navbar-inverse navbar-fixed-top">
+      <div  class="navbar-inner" style="background: url(images/headline.png);border: 0;">
+        <div class="container" style="padding:0 auto">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#"></a>
+          
+          <div id="nvbin" class="nav-collapse collapse"  style="position:absolute">
+            <ul id="nvbinnav" class="hidden-phone nav">
+              <li class="active"><a href="#">О дизайнере</a></li>
+              <li><a href="#about">Проекты</a></li>
+              <li><a href="#contact">Блог</a></li>
+              <li><a href="#contact">Контакты</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+
+          <div id="nvbinmobile" class="nav-collapse collapse"  style="position:absolute;display:none">
+            <ul id="nvbinnavmobile" class="hidden-phone nav">
+              <li class="active"><a href="#"><i class="icon-star icon-white"></i></a></li>
+              <li><a href="#about"><i class="icon-th-large icon-white"></i></a></li>
+              <li><a href="#contact"><i class="icon-comment icon-white"></i></a></li>
+              <li><a href="#contact"><i class="icon-book icon-white"></i></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+          
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container white-transp-grad bgimg" id="bgimgdiv" style="padding:0;margin:0;width:100%">
+    <div id="leftring" style="position:absolute;width:40px;height:40px;cursor:pointer;cursor:hand;">
+     <img id="wordnew" src="images/word_new_ru.png" style="top:30%;position:relative;display:none;">
+    </div>
+    <div id="rightring" style="position:absolute;width:40px;height:40px;cursor:pointer;cursor:hand;">
+     <img id="playbutton" src="images/buttonplay.png" style="left:10%;top:5%;position:relative;display:none;">
+    </div>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="vegas/jquery.vegas.js"></script>    
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script>
+    $( function() {
+    	onresize();    	
+    });
+    $(window).load(function() {
+    	onresize();
+    });
+    $(window).resize(function() {
+    	onresize();
+    });
+    $("#leftring").on('mouseover',function(){
+      $("#wordnew").show();
+    });
+    $("#leftring").on('mouseout',function(){
+      $("#wordnew").hide();
+    });
+    $("#rightring").on('mouseover',function(){
+      $("#playbutton").show();
+    });
+    $("#rightring").on('mouseout',function(){
+      $("#playbutton").hide();
+    });
+    function onresize(){
+	var maph = $(window).height();
+	var mapw = $(window).width();
+	var nvbinw = $("#nvbinnav").width();
+    	$("#nvbin").show();
+        $("#nvbinmobile").hide();
+    	$('#bgimgdiv').css('background','url(images/main_bg_1400.jpg)');
+    	$('#bgimgdiv').css('background-position', 'left 0px');
+	$('#bgimgdiv').css('width',mapw+'px');
+	$('#bgimgdiv').css('height',parseInt(3*mapw/4)+'px');
+    	$("#nvbin").css("left",Math.floor(mapw/2-nvbinw/2)-10+"px")
+    	
+    	var leftboxsize = Math.floor(140*mapw/1400);
+
+    	$('#leftring').css("width",leftboxsize+'px');
+    	$('#leftring').css("height",leftboxsize+'px');
+    	$('#wordnew').css("width",leftboxsize+'px');
+
+    	$('#rightring').css("width",leftboxsize+'px');
+    	$('#rightring').css("height",leftboxsize+'px');
+    	$('#playbutton').css("width",125*mapw/1400+'px');
+
+    	
+    	$('#leftring').css("left",Math.floor(168*mapw/1400)-Math.floor(leftboxsize/2)+'px');
+    	$('#leftring').css("top",Math.floor(208*mapw/1400)-Math.floor(leftboxsize/2)+'px');
+
+    	$('#rightring').css("left",mapw-Math.floor(168*mapw/1400)-Math.floor(leftboxsize/2)+'px');
+    	$('#rightring').css("top",Math.floor(208*mapw/1400)-Math.floor(leftboxsize/2)+'px');
+
+    	
+    	/*
+    	
+    	if (detectipad() && maph>mapw){
+    	  $('#bgimgdiv').css('background-position', '-220px 0px');
+    	}
+    	
+    	if (detectmob() && maph<mapw){
+    	  $("#nvbin").hide();
+    	  $("#nvbinmobile").show();
+	  var nvbinmobilew = $("#nvbinnavmobile").width();
+    	  $("#nvbinmobile").css("left",Math.floor(mapw/2-nvbinmobilew/2)+"px")
+    	  $('#bgimgdiv').css('background','url(images/main_bg_mobile_hor.jpg)');
+       	  $('#bgimgdiv').css('background-size','cover');
+       	  return 0;
+    	}
+
+    	if(maph/mapw<3/4){
+  	  $('#bgimgdiv').css('width',mapw+'px');
+  	  $('#bgimgdiv').css('width',3*mapw/4+'px');
+    	  $('#bgimgdiv').css('background','url(images/main_bg_longscreen.jpg)');
+    	} 
+    	*/
+    	
+    	if (mapw<480 || detectmob()){
+    	  //$("#nvbin").css("left","20px")
+    	  $("#nvbin").hide();
+    	  $("#nvbinmobile").show();
+	  var nvbinmobilew = $("#nvbinnavmobile").width();
+    	  $("#nvbinmobile").css("left",Math.floor(mapw/2-nvbinmobilew/2)+"px")
+    	  $('#bgimgdiv').css('background','url(images/main_bg_600.jpg)');
+	  $('#bgimgdiv').css('height',mapw+'px');
+	  $('#bgimgdiv').css('height',maph+'px');
+    	}
+    	$('#bgimgdiv').css('background-size','cover');
+    }
+    
+    function detectipad() {
+    	if( navigator.userAgent.match(/iPad/i) ){
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    } 
+
+    function detectmob() { 
+    	if( navigator.userAgent.match(/Android/i)
+    	|| navigator.userAgent.match(/webOS/i)
+    	|| navigator.userAgent.match(/iPhone/i)
+//    	|| navigator.userAgent.match(/iPad/i)
+    	|| navigator.userAgent.match(/iPod/i)
+    	|| navigator.userAgent.match(/BlackBerry/i)
+    	|| navigator.userAgent.match(/Windows Phone/i)
+    	){
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    }
+
+    </script>
+{% render_block "js" %}
+  </body>
+</html>

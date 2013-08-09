@@ -1,0 +1,111 @@
+# coding=utf-8
+from django.shortcuts import render_to_response, redirect
+from django.template import Template,RequestContext, loader, Context
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+# Create your views here.
+from datetime import tzinfo, timedelta, datetime
+from django.views.decorators.cache import never_cache
+from django.utils import translation
+from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
+from django.utils.translation import ugettext_noop
+from django.utils.translation import get_language
+from blog import models as blog_models
+from django.db.models import Q,F
+from photologue.models import ImageModel, Gallery, Photo
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
+import random
+import string
+from django.template.defaultfilters import slugify
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+blog_index_html = settings.BLOG_INDEX_HTML
+blog_articlelist_html = settings.BLOG_ARTICLELIST_HTML
+blog_article_html = settings.BLOG_ARTICLE_HTML
+blog_projects_html = settings.BLOG_PROJECTS_HTML
+
+def index(request):
+  return render_to_response(blog_index_html, {}, context_instance = RequestContext(request))
+  
+def blogtermpage(request,termslug):
+  if termslug is not None:
+    term = blog_models.Term.objects.filter(termslug = termslug)
+    article_list = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+  else:
+    article_list = blog_models.Article.objects.filter(publish_status = '2').exclude(cover=None)
+  terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
+  paginator = Paginator(article_list, 5) # Show 5 articles per page
+  page = request.GET.get('page',1)
+  try:
+    articles = paginator.page(page)
+  except PageNotAnInteger:
+    # If page is not an integer, deliver first page.
+    articles = paginator.page(1)
+  except EmptyPage:
+    # If page is out of range (e.g. 9999), deliver last page of results.
+    articles = paginator.page(paginator.num_pages)
+  page_range = paginator.page_range
+  params = { 'articles' : articles, 'page_range' : page_range, 'terms' : terms }
+  return render_to_response(blog_articlelist_html, params, context_instance = RequestContext(request))
+
+def search(request):
+    q = None
+    try:
+      q = request.GET['s']
+    except:
+      pass
+    if q:
+      articles = blog_models.Article.objects.filter(Q(title__icontains=q) | Q(text__icontains=q), publish_status = '2')
+    else:
+      articles = blog_models.Article.all().none()
+    terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
+    params = { 'articles' : articles, 'terms' : terms }
+    return render_to_response(blog_articlelist_html(request), params, context_instance = RequestContext(request))
+  
+def article(request,artid):
+  try:
+    article = blog_models.Article.objects.get(id=artid)
+  except:
+    article = blog_models.Article.objects.get(slug=artid)
+  sidebar = blog_models.Article.objects.filter(publish_status = '2').exclude(id=article.id).order_by('?')[0:20]
+  terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
+  params = { 'article' : article, 'sidebar' : sidebar, 'terms' : terms }
+  return render_to_response(article.template, params, context_instance = RequestContext(request))
+
+def projects(request):
+  term = blog_models.Term.objects.filter(id=1) #reserved for projects
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+  params = { 'articles' : articles }
+  return render_to_response(blog_projects_html, params, context_instance = RequestContext(request))
+  
+def redactorimagejson(request):
+  photos = Photo.objects.all().order_by('-id')
+  template = loader.get_template('redactorimagesjson.html')
+  params = { 'photos' : photos }
+  context = RequestContext(request, params)  
+  return HttpResponse(template.render(context),mimetype='application/json')  
+
+@csrf_exempt  
+def uploadimagejson(request):
+  p = Photo()
+  if request.user.is_authenticated():
+    if request.method == 'POST':
+      pt = codegenerator()+codegenerator()
+      p.image = request.FILES['file']
+      p.title = pt
+      p.title_slug = slugify(pt) #+codegenerator()
+      p.save()
+#  template = loader.get_template('redactorimageupload.html')
+    params = { 'photo' : p }
+#  context = RequestContext(request, params)  
+  return render_to_response('redactorimageupload.html',params,context_instance = RequestContext(request))
+#  return HttpResponse(template.render(context),mimetype='application/json')  
+        
+    
+def codegenerator():
+  digits = "".join( [random.choice(string.digits) for i in xrange(3)] )
+  chars = "".join( [random.choice(string.letters) for i in xrange(4)] ).lower()
+  digits2 = "".join( [random.choice(string.digits) for i in xrange(3)] )
+  return digits+chars+digits2

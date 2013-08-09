@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<style>
+.img-polaroid {
+padding: 4px;
+background-color: #fff;
+border: 0 !important;
+-webkit-box-shadow: 0;
+-moz-box-shadow: 0;
+box-shadow: 0;
+}
+</style>
+{% endblock %}
+{% block topbrandlogo %}
+  <a class="brand" id="brandtop" href="/"><img src="{{STATIC_URL}}images/small_logo.png" style="height:33px;"></a>
+{% endblock %}
+{% block wrapper %}
+
+    <div id='map' class="container white-transp-grad" style="overflow: hidden;padding:0;margin:0;width:100%;height:560px;background:#000;min-width:1024px;position: relative;">
+    <div>
+    <img vid="10" init="-20" style="width:220px;height:180px;left:-20px;position:absolute;top:60px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="11" init="-20" style="width:220px;height:180px;left:-20px;position:absolute;top:60px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="20" init="220" style="width:140px;height:140px;left:180px;position:absolute;top:100px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="21" init="220" style="width:140px;height:140px;left:180px;position:absolute;top:100px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="30" init="0" style="width:140px;height:100px;left:-40px;position:absolute;top:260px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="31" init="0" style="width:140px;height:100px;left:-40px;position:absolute;top:260px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="40" init="160" style="width:200px;height:160px;left:120px;position:absolute;top:260px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="41" init="160" style="width:200px;height:160px;left:120px;position:absolute;top:260px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="50" init="380" style="width:480px;height:300px;left:340px;position:absolute;top:80px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="51" init="380" style="width:480px;height:300px;left:340px;position:absolute;top:80px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="60" init="880" style="width:320px;height:200px;left:840px;position:absolute;top:60px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="61" init="880" style="width:320px;height:200px;left:840px;position:absolute;top:60px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="70" init="880" style="width:320px;height:200px;left:800px;position:absolute;top:280px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="71" init="880" style="width:320px;height:200px;left:800px;position:absolute;top:280px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="80" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:300px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="81" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:300px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    <img vid="90" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:180px;padding:0" src="{{STATIC_URL}}images/testpic_0.png" class="img-polaroid">
+    <img vid="91" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:180px;padding:0;display:none" src="{{STATIC_URL}}images/testpic_3.png" class="img-polaroid">
+    </div>
+    <div style="top:520px;position:absolute;width:100%;color:#fff;font-size:20px;min-width:1080px">
+      <center>МОИ ПРОЕКТЫ</center>
+    </div>
+    
+    </div>
+    
+    <div style="margin-top:80px;">
+     <center><img style="width:200px" src="{{STATIC_URL}}images/biglogo_1.png"></center>
+    </div>
+    
+    <div style="width:100%;height:450px;margin-top:80px;margin-bottom:60px;">
+    
+    <div style="width:805px;height:450px;margin:0 auto;position:relative">
+    <div style="position:absolute;top:0;left:300px;background:white;width:220px;height:160px;font-size:14px">
+    Дизайн интерьера – это не только красота и уют, но еще настроение, мечты и пристрастия его хозяев. 
+Но создавать свою неповторимую обстановку лучше совместно с профессиональным дизайнером квартир.
+    </div>
+    
+    <div style="position:absolute;top:-52px;left:0px;width:287px;height:222px">
+      <div style="text-align:right;height:32px;padding-top:20px;background:#fff;">
+        <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
+          <div style="color:#f5775d">Уютный и городской</div>
+          <div style="font-size:11px">
+          Неотдаленная комфортность
+          </div>
+        </div>
+      </div>
+      <div class="res" w=300 h=170 style="z-index:5;width:287px;height:170px;background:#eee url({{STATIC_URL}}images/testpic_0.png);background-size:300px">
+      </div>
+    </div>
+
+
+    <div style="position:absolute;top:-52px;left:533px;width:272px;height:220px">
+      <div style="text-align:right;height:32px;padding-top:20px;background:#fff;">
+        <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
+          <div style="color:#f5775d">Уютный и городской</div>
+          <div style="font-size:11px">
+          Неотдаленная комфортность
+          </div>
+        </div>
+      </div>
+      <div class="res" w=282 h=170 style="z-index:5;width:272px;height:170px;background:#eee url({{STATIC_URL}}images/testpic_4.png);background-size:282px">
+      </div>
+    </div>
+
+    <div style="position:absolute;top:130px;left:0px;width:480px;height:262px">
+      <div style="text-align:right;height:32px;padding-top:20px;">
+        <div class="restext" style="opacity:0;margin:32px 0;padding:0 10px;background:#fff;border:2px solid #f5775d;border-bottom:0;">
+          <div style="color:#f5775d;z-index:1">Уютный и городской</div>
+          <div style="font-size:11px;z-index:1">
+          Неотдаленная комфортность
+          </div>
+        </div>
+      </div>
+      <!--<img w=480 h=262 t=130 l=0 class="res" src="{{STATIC_URL}}images/testpic_2.png">-->
+      <div class="res" w=480 h=209 style="z-index:5;width:480px;height:209px;background:#eee url({{STATIC_URL}}images/testpic_2.png);background-size:480px 209px">
+      </div>
+    </div>
+
+    <div style="position:relative;top:130px;left:496px;width:308px;height:262px">
+      <div style="text-align:right;height:32px;padding-top:20px;">
+        <div class="restext" style="margin:32px 0;padding:0 10px;background:#fff;border:2px solid #f5775d;border-bottom:0;opacity:0;">
+          <div style="color:#f5775d">Уютный и городской</div>
+          <div style="font-size:11px">
+          Неотдаленная комфортность
+          </div>
+        </div>
+      </div>
+      <div class="res" w=309 h=209 style="width:309px;height:209px;background:#eee url({{STATIC_URL}}images/testpic_3.png);background-size:309px 209px">
+      </div>
+    </div>
+
+    
+    </div>
+    
+    </div> <!-- /container -->
+
+<div class="navbar navbar-inverse" style="margin-top:120px;margin-bottom:0;background: url({{STATIC_URL}}images/headline.png);">
+&nbsp;
+</div>
+{% endblock wrapper %}
+{% block extra_bottom_js %}
+    <script>
+    $(window).resize(function() {
+    	onresizegallery();
+    });
+    $(window).load(function() {
+    	onresizegallery();
+    });
+    
+    function onresizegallery(){
+    	var mapw = $(window).width();
+    	if (mapw>10){
+	$( ".img-polaroid" ).each(function( index ) {
+	  var init = parseInt($(this).attr("init"));
+	  var df = (mapw-1280)/2;
+	  //console.log(df);
+	  $(this).css('left',init+df+"px")
+	});
+    	}
+
+    }
+    
+    $('.res').mouseover(function(){
+          $(this).css("cursor","pointer");
+          $(this).animate({
+          	backgroundSize: parseInt(parseInt($(this).attr('w'))+60)+"px",
+          	backgroundPositionX: "-15px",
+          	backgroundPositionY: "-15px",
+          }, 'slow');
+          var el = $($(this).prev().find(':first-child')[0]);
+          el.animate({
+                marginTop: "-10px",
+                opacity: "1"
+          }, 'slow', function(){el.css('background','#fff')});
+    });
+    
+    $('.res').mouseout(function(){   
+          $(this).animate({
+          	backgroundSize: parseInt($(this).attr('w'))+"px",
+          	backgroundPositionX: "0px",
+          	backgroundPositionY: "0px",
+          }, 'slow');
+          var el = $($(this).prev().find(':first-child')[0]);
+          el.animate({
+                marginTop: "32px",
+                opacity: "0"
+          }, 'slow', function(){el.css('background','#fff')});
+    });
+    
+    var pics = ['{{STATIC_URL}}images/testpic_2.png','{{STATIC_URL}}images/testpic_3.png','{{STATIC_URL}}images/testpic_4.png']
+    
+    function randomchange(){
+      var imgs = $(".img-polaroid:visible")
+      var im = imgs[Math.floor(Math.random()*imgs.length)]
+      var pic = pics[Math.floor(Math.random()*pics.length)]
+      console.log($(im).attr("vid"));
+      var vid = parseInt($(im).attr("vid"))
+      if (vid%10==0){
+      	var newvid = vid+1;
+      }
+      else{
+        var newvid = vid-1;
+      }
+      var im2 = $("[vid="+newvid+"]")
+      $(im).fadeOut(1600);
+      $(im2).fadeIn(1600);
+    }
+    
+    setInterval('randomchange()',3000);
+    
+</script>
+{% endblock %}
+
