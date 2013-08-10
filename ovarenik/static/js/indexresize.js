@@ -34,7 +34,7 @@
     	$('#bgimgdiv').css('background-position', 'left 0px');
 	$('#bgimgdiv').css('width',mapw+'px');
 	$('#bgimgdiv').css('height',parseInt(3*mapw/4)+'px');
-    	$("#nvbin").css("left",Math.floor(mapw/2-nvbinw/2)-10+"px")
+    	//$("#nvbin").css("left",Math.floor(mapw/2-nvbinw/2)-10+"px")
     	
     	var leftboxsize = Math.floor(140*mapw/1400);
 
