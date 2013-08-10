@@ -229,6 +229,7 @@ BLOG_TEMPLATES = (
   ('blog/about.html',_("About page")),
   ('blog/index.html',_("Main page")),
   ('blog/articlelist.html',_("List of articles")),
+  ('blog/project.html',_("Design project")),
 )
 
 
