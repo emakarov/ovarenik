@@ -1,0 +1,30 @@
+server{
+  listen 8098;
+  server_name 109.234.152.155
+  access_log /var/log/nginx/localhost.access.log;
+  client_max_body_size 32m;
+  
+  location cgi-bin {
+    deny all;
+  }
+  location /static/ {
+    root /home/makarov/ovarenik/ovarenik/;
+  }
+  location /media/{
+    rewrite ^/media/(.*)$ /statuc/$1 last;
+  }
+  location ~ /\.ht {
+    deny all;
+  }
+  location / {
+    fastcgi_pass 127.0.0.1:8099;
+    fastcgi_param PATH_INFO $fastcgi_script_name;                                                                                                                                           
+    fastcgi_param REQUEST_METHOD $request_method;                                                                                                                                           
+    fastcgi_param QUERY_STRING $query_string;                                                                                                                                               
+    fastcgi_param CONTENT_TYPE $content_type;                                                                                                                                               
+    fastcgi_param CONTENT_LENGTH $content_length;                                                                                                                                           
+    fastcgi_pass_header Authorization;                                                                                                                                                      
+    fastcgi_intercept_errors off;  
+   }
+}
+  
