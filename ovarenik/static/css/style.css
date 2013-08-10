@@ -47,7 +47,7 @@ color: #bbb;
 }
 #brandtop{
 padding: 2px 0 0 34px;
-position:fixed;
+position:absolute;
 left:20px;
 }
 
