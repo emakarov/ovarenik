@@ -3,6 +3,7 @@ from django.conf import settings
 
 urlpatterns = patterns('blog.views',
     (r'article/(?P<artid>\d+)/$', 'article'),
+    (r'art/(?P<transition>\w+)/(?P<artid>\d+)/$', 'transition'),
     (r'redactorimagejson/$', 'redactorimagejson'),
     (r'uploadimagejson/$', 'uploadimagejson'),
     (r'search/$', 'search'),

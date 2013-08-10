@@ -74,6 +74,23 @@ def article(request,artid):
   params = { 'article' : article, 'sidebar' : sidebar, 'terms' : terms }
   return render_to_response(article.template, params, context_instance = RequestContext(request))
 
+def transition(request,transition,artid):
+  a = blog_models.Article.objects.get(id=artid)
+  term = a.terms.all()[0]
+  a_t = blog_models.Article.objects.filter(terms = term)
+  if transition == "next":
+    try:
+      article = a_t.filter(id__gt=a.id).order_by('id')[0]
+    except:
+      article = a_t.order_by('id')[0]
+  else:
+    try:
+      article = a_t.filter(id__lt=a.id).order_by('-id')[0]
+    except:
+      article = a_t.order_by('-id')[0]
+  return redirect("/%s/" % article.slug)
+
+
 def projects(request):
   term = blog_models.Term.objects.filter(id=1) #reserved for projects
   articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
