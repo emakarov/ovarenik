@@ -49,6 +49,9 @@
       {% endif %}
       <a href="/blog/?page={{p}}"><span style="color:#f5775d">{{p}}</span></a>
       {% endfor %}
+      {% if articles.has_next %}
+      &nbsp;&nbsp;<a href="/blog/?page={{ contacts.next_page_number }}">>></a>
+      {% endif %}
     </div>
 
     
