@@ -86,7 +86,7 @@ box-shadow: 0;
             </div>
           </div>
         </div>
-        <div class="res" w=300 h=170 style="z-index:5;width:287px;height:170px;background:#eee url({{p.cover.get_287x170_url}});background-size:300px">
+        <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=300 h=170 style="z-index:5;width:287px;height:170px;background:#eee url({{p.cover.get_287x170_url}});background-size:300px">
         </div>
       </div>
 
@@ -100,7 +100,7 @@ box-shadow: 0;
           </div>
         </div>
       </div>
-      <div class="res" w=282 h=170 style="z-index:5;width:272px;height:170px;background:#eee url({{p.cover.get_272x170_url}});background-size:282px">
+      <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=282 h=170 style="z-index:5;width:272px;height:170px;background:#eee url({{p.cover.get_272x170_url}});background-size:282px">
       </div>
     </div>
     
@@ -115,11 +115,11 @@ box-shadow: 0;
         </div>
       </div>
       <!--<img w=480 h=262 t=130 l=0 class="res" src="{{STATIC_URL}}images/testpic_2.png">-->
-      <div class="res" w=480 h=209 style="z-index:5;width:480px;height:209px;background:#eee url({{p.cover.get_480x209_url}});background-size:480px 209px">
+      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=480 h=209 style="z-index:5;width:480px;height:209px;background:#eee url({{p.cover.get_480x209_url}});background-size:480px 209px">
       </div>
     </div>
 
-    {% elif forloop.counter = 4 %}
+    {% elif forloop.counter = 5 %}
     <div style="position:relative;top:130px;left:496px;width:308px;height:262px">
       <div style="text-align:right;height:32px;padding-top:20px;">
         <div class="restext" style="margin:32px 0;padding:0 10px;background:#fff;border:2px solid #f5775d;border-bottom:0;opacity:0;">
@@ -129,7 +129,7 @@ box-shadow: 0;
           </div>
         </div>
       </div>
-      <div class="res" w=309 h=209 style="width:309px;height:209px;background:#eee url({{p.cover.get_309x209_url}});background-size:309px 209px">
+      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=309 h=209 style="width:309px;height:209px;background:#eee url({{p.cover.get_309x209_url}});background-size:309px 209px">
       </div>
     </div>
     {% endif %}
