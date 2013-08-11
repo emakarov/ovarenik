@@ -35,10 +35,12 @@
         {% endblock %}
           <div id="nvbin" class="nav-collapse collapse"  style="position:absolute;min-width:600px;">
             <ul id="nvbinnav" class="hidden-phone nav">
+            {% block topmenuitems %}
               <li {% if request.get_full_path = '/about/' %}class="active"{% endif %}><a href="/about/">О ДИЗАЙНЕРЕ</a></li>
               <li {% if request.get_full_path = '/projects/' %}class="active"{% endif %}><a href="/projects/">ПРОЕКТЫ</a></li>
               <li {% if request.get_full_path = '/blog/' %}class="active"{% endif %}><a href="/blog/">БЛОГ</a></li>
               <li {% if request.get_full_path = '/contacts/' %}class="active"{% endif %}><a href="/contacts/">КОНТАКТЫ</a></li>
+            {% endblock topmenuitems %}
             </ul>
           </div><!--/.nav-collapse -->
         </div>
