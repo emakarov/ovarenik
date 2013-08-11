@@ -41,7 +41,7 @@ class Article(models.Model):
     publish_status = models.CharField(max_length=1, choices=PUBLISH_STATUS_CHOICES)
     publish_date = models.DateTimeField(blank=True,null=True)
     article_type = models.CharField(max_length=1, choices=ARTICLE_TYPES_CHOICES)
-    gallery = models.ForeignKey(Gallery, null=True, blank=True,verbose_name=_("Gallery"))
+    gallery = models.ForeignKey(Gallery, null=True, blank=True,verbose_name=_("Gallery"), related_name="gallery_articles")
     cover = ChainedForeignKey(
         Photo,
         chained_field="gallery",
