@@ -43,9 +43,12 @@
     </div>
 
     <div style="width:600px;margin:60px auto 0;"> 
-      <span style="color:#f5775d">1</span> 
-      &nbsp;&nbsp;2 
-      &nbsp;&nbsp;>> 
+      {% for p in page_range %}
+      {% if not forloop.first %}
+      &nbsp;&nbsp; 
+      {% endif %}
+      <a href="/blog/?page={{p}}"><span style="color:#f5775d">1</span></a>
+      {% endfor %}
     </div>
 
     
@@ -55,7 +58,7 @@
     
     </div> <!-- /container -->
 
-<div class="navbar navbar-inverse" style="margin:20px 0 0;height:20px;background: url(images/headline.png);">
+<div class="navbar navbar-inverse" style="margin:20px 0 0;height:20px;background: url({{STATIC_URL}}images/headline.png);">
 &nbsp;
 </div>
 {% endblock wrapper %}
