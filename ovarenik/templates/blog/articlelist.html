@@ -7,7 +7,12 @@
   }
   </style>
   {% endblock %}
-{% block topbrandlogo %}
+{% block topmenuitems %}
+ <li><a href="/about/">О ДИЗАЙНЕРЕ</a></li>
+ <li><a href="/projects/">ПРОЕКТЫ</a></li>
+ <li class="active"><a href="/blog/">БЛОГ</a></li>
+ <li><a href="/contacts/">КОНТАКТЫ</a></li>
+{% endblock topmenuitems %}{% block topbrandlogo %}
   <a class="brand" id="brandtop" href="/"><img src="{{STATIC_URL}}images/small_logo.png" style="height:33px;"></a>
 {% endblock %}
 {% block wrapper %}
