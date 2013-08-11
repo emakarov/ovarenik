@@ -43,11 +43,18 @@
     </div>
 
     <div style="width:600px;margin:60px auto 0;"> 
+      {% if articles.has_previous %}
+      <a href="/blog/?page={{ articles.previous_page_number }}"><<</a>&nbsp;&nbsp;
+      {% endif %}
       {% for p in page_range %}
       {% if not forloop.first %}
       &nbsp;&nbsp; 
       {% endif %}
-      <a href="/blog/?page={{p}}"><span style="color:#f5775d">{{p}}</span></a>
+      {% ifequal p articles.number %}
+        <a href="/blog/?page={{p}}"><span style="color:#f5775d">{{p}}</span></a>
+      {% else %}
+        <a href="/blog/?page={{p}}"><span style="color:#000">{{p}}</span></a>
+      {% endifequal %}
       {% endfor %}
       {% if articles.has_next %}
       &nbsp;&nbsp;<a href="/blog/?page={{ articles.next_page_number }}">>></a>
