@@ -74,7 +74,7 @@ box-shadow: 0;
     {% for p in articles %}
       {% if forloop.counter = 1 %}
       <div style="position:absolute;top:0;left:300px;background:white;width:220px;height:160px;font-size:14px">
-        {{ p.description }}
+        {{ p.description|safe }}
       </div>
       {% elif forloop.counter = 2 %}
       <div style="position:absolute;top:-52px;left:0px;width:287px;height:222px">
