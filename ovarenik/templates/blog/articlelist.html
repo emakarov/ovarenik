@@ -43,7 +43,7 @@
       </a>
       </div>
       <div style="margin-top:30px">
-      <span style="font-size:24px;color: #939393;font-weight: 400;">{{a.publish_date|date:"m"}}</span><br>
+      <span style="font-size:24px;color: #939393;font-weight: 400;">{{a.publish_date|date:"d"}}</span><br>
       <!--<span style="color: #939393;">{{a.publish_date|date:"F"}}</span>-->
       {% if a.publish_date %}
       <span style="color: #939393;">{{a.publish_date|ru_strftime:"%B"}}</span>
