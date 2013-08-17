@@ -173,7 +173,7 @@ INSTALLED_APPS = (
     'sitemanagement',
     'blog',
     'photologue',
-
+    'pytils',
 )
 
 # A sample logging configuration. The only tangible logging

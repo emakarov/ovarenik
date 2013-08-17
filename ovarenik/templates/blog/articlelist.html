@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-  {% block extrahead %}
+{% templatetag openblock %} {% load pytils_dt %}{% templatetag closeblock %}  
+{% block extrahead %}
   <style>
   a:hover{
     color: #000;
@@ -43,17 +44,17 @@
       </div>
       <div style="margin-top:30px">
       <span style="font-size:24px;color: #939393;font-weight: 400;">{{a.publish_date|date:"m"}}</span><br>
-      <span style="color: #939393;">{{a.publish_date|date:"F"}}</span>
+      <!--<span style="color: #939393;">{{a.publish_date|date:"F"}}</span>-->
+      {% if a.publish_date %}
+      <span style="color: #939393;">{{a.publish_date|ru_strftime:"%B"}}</span>
+      {% endif %}
       </div>
       <div style="color: #939393;margin-top:40px;width:600px;text-align:left;margin-bottom: 40px;">
       {{ a.description|safe }}
       </div>
       </div>
       {% endfor %}
-
       </center>
-
-      
     </div>
 
     <div style="width:600px;margin:60px auto 0;"> 
