@@ -95,7 +95,7 @@ def projects(request):
   term = blog_models.Term.objects.filter(termslug='projects') #reserved for projects
   articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
   galleries = Gallery.objects.filter(gallery_articles__in=articles)
-  photos = Photo.objects.filter(galleries__in=galleries)
+  photos = Photo.objects.filter(galleries__in=galleries).order_by('?')
   photos18 = photos[0:18]
   params = { 'articles' : articles, 'photos' : photos, 'photos18' : photos18 }
   return render_to_response(blog_projects_html, params, context_instance = RequestContext(request))
