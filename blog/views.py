@@ -27,7 +27,9 @@ blog_article_html = settings.BLOG_ARTICLE_HTML
 blog_projects_html = settings.BLOG_PROJECTS_HTML
 
 def index(request):
-  return render_to_response(blog_index_html, {}, context_instance = RequestContext(request))
+  g = Gallery.objects.get(title_slug="mainpagebackground")
+  p = g.photos.all().order_by('?')[0]
+  return render_to_response(blog_index_html, {'photo' : p }, context_instance = RequestContext(request))
   
 def blogtermpage(request,termslug):
   if termslug is not None:
