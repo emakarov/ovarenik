@@ -100,11 +100,12 @@
       	  var ml = parseInt($("#fader-inner").css('margin-left').replace("px",""));
           $("#fader-inner").animate({
             marginLeft: ml+920+"px"
-          },400);
+          },400, function(){
           $("#fader-inner").css("margin-left", "-1840px");
           $("#fader-inner").animate({
             marginLeft: "0px"
           },400);
+          });
           current_gallery_p = 0;
           
         }
