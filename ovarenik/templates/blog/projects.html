@@ -195,13 +195,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     });
     
     $('.res').mouseout(function(){   
-          $(this).animate({
+          $(this).stop(true, true).animate({
           	backgroundSize: parseInt($(this).attr('w'))+"px",
           	backgroundPositionX: "0px",
           	backgroundPositionY: "0px",
           }, 'slow');
           var el = $($(this).prev().find(':first-child')[0]);
-          el.animate({
+          el.stop(true, true).animate({
                 marginTop: "32px",
                 opacity: "0"
           }, 'slow', function(){el.css('background','#fff')});
