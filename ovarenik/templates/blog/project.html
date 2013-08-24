@@ -116,7 +116,7 @@
               marginLeft: ml+dx+"px"
             },400);
         }
-        $("#mainpic").attr("src", $(".fader-inner-img")[current_gallery_p].attr('src'));
+        $("#mainpic").attr("src", $($(".fader-inner-img")[current_gallery_p]).children().attr('src'));
     	e.stopPropagation();
     });
 
