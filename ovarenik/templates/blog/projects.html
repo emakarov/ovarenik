@@ -182,13 +182,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     
     $('.res').mouseover(function(){
           $(this).css("cursor","pointer");
-          $(this).delay( 200 ).animate({
+          $(this).delay( 400 ).animate({
           	backgroundSize: parseInt(parseInt($(this).attr('w'))+32)+"px",
           	backgroundPositionX: "-8px",
           	backgroundPositionY: "-8px",
           }, 'slow');
           var el = $($(this).prev().find(':first-child')[0]);
-          el.animate({
+          el.delay( 400 ).animate({
                 marginTop: "-10px",
                 opacity: "1"
           }, 'slow', function(){el.css('background','#fff')});
