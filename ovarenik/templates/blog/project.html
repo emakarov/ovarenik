@@ -20,7 +20,7 @@
       <span style="font-size:36px">{{ article.title }}</span>
       </div>
       <div style="margin-top:34px">
-      <img onclick="showgal()" style="cursor:pointer;cursor:hand;width:720px;height:415px" src="{{article.cover.get_720x415_url}}">
+      <img id="mainpic" onclick="showgal()" style="cursor:pointer;cursor:hand;width:720px;height:415px" src="{{article.cover.get_720x415_url}}">
       </div>
       <div style="margin-top:66px">
       <span style="font-size:24px">{{ article.small_title}}</span>
@@ -116,6 +116,7 @@
               marginLeft: ml+dx+"px"
             },400);
         }
+        $("#mainpic").attr("src", $(".fader-inner-img")[current_gallery_p].attr('src'));
     	e.stopPropagation();
     });
 
