@@ -111,6 +111,11 @@
 	          current_gallery_p = 0;
           }
         }
+        else {
+            $("#fader-inner").animate({
+              marginLeft: ml+dx+"px"
+            },400);
+        }
     	e.stopPropagation();
     });
 
