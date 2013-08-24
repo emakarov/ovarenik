@@ -182,7 +182,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     
     $('.res').mouseover(function(){
           $(this).css("cursor","pointer");
-          $(this).animate({
+          $(this).delay( 200 ).animate({
           	backgroundSize: parseInt(parseInt($(this).attr('w'))+32)+"px",
           	backgroundPositionX: "-8px",
           	backgroundPositionY: "-8px",
