@@ -182,26 +182,26 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     
     $('.res').mouseover(function(){
           $(this).css("cursor","pointer");
-          $(this).stop(true, true).delay( 200 ).animate({
+          $(this).stop().delay( 200 ).animate({
           	backgroundSize: parseInt(parseInt($(this).attr('w'))+32)+"px",
           	backgroundPositionX: "-8px",
           	backgroundPositionY: "-8px",
           }, 'slow');
           var el = $($(this).prev().find(':first-child')[0]);
-          el.stop(true, true).delay( 200 ).animate({
+          el.stop().delay( 200 ).animate({
                 marginTop: "-10px",
                 opacity: "1"
           }, 'slow', function(){el.css('background','#fff')});
     });
     
     $('.res').mouseout(function(){   
-          $(this).stop(true, true).animate({
+          $(this).stop().animate({
           	backgroundSize: parseInt($(this).attr('w'))+"px",
           	backgroundPositionX: "0px",
           	backgroundPositionY: "0px",
           }, 'slow');
           var el = $($(this).prev().find(':first-child')[0]);
-          el.stop(true, true).animate({
+          el.stop().animate({
                 marginTop: "32px",
                 opacity: "0"
           }, 'slow', function(){el.css('background','#fff')});
