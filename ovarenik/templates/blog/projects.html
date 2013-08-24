@@ -11,6 +11,19 @@ box-shadow: 0;
 cursor:pointer;
 cursor:hand;
 }
+
+.navbar-inverse .navbar-inner {
+background-color: #1b1b1b;
+background-image: -moz-linear-gradient(top, #000, #000);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(#000));
+background-image: -webkit-linear-gradient(top, #000, #000);
+background-image: -o-linear-gradient(top, #000, #000);
+background-image: linear-gradient(to bottom, #000, #000);
+background-repeat: repeat-x;
+border-color: #252525;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+}
+
 </style>
 {% endblock %}
 {% block subtitle %}Проекты | {% endblock %}
@@ -19,7 +32,7 @@ cursor:hand;
 {% endblock %}
 {% block wrapper %}
 
-    <div id='map' class="container white-transp-grad" style="overflow: hidden;padding:0;margin:0;width:100%;height:590px;background:#000;min-width:1024px;position: relative;">
+    <div id='map' class="container white-transp-grad" style="overflow: hidden;padding:0;margin:0;width:100%;height:590px;background:#000;position: relative;">
     <div>
     {% for p in photos18 %}
     {% if forloop.counter = 1 %}
@@ -61,7 +74,7 @@ cursor:hand;
     {% endif %}
     {% endfor %}
     </div>
-    <div style="top:520px;position:absolute;width:100%;color:#fff;font-size:20px;min-width:1080px">
+    <div style="top:520px;position:absolute;width:100%;color:#fff;font-size:20px;">
       <center>МОИ ПРОЕКТЫ</center>
     </div>
     

@@ -26,8 +26,13 @@ jQuery.fn.autoGrow = function() {
 		var sendContentToMirror = function (textarea) {
 			mirror.innerHTML = String(textarea.value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br />') + '.<br/>.';
 
-			if (jQuery(textarea).height() != jQuery(mirror).height())
-				jQuery(textarea).height(jQuery(mirror).height());
+			if (jQuery(textarea).height() != jQuery(mirror).height()){
+				var add = 20;
+				if (jQuery(textarea).val().length == 0){
+				  add = 0
+				}
+				jQuery(textarea).height(jQuery(mirror).height()+add+'px');
+			}
 		}
 
 		var growTextarea = function () {
@@ -45,7 +50,7 @@ jQuery.fn.autoGrow = function() {
 		mirror.style.width = jQuery(this).css('width');
 		mirror.style.fontFamily = jQuery(this).css('font-family');
 		mirror.style.fontSize = jQuery(this).css('font-size');
-		mirror.style.lineHeight = '12px'; //jQuery(this).css('line-height');
+		mirror.style.lineHeight = '14px'; //jQuery(this).css('line-height');
 
 		// Style the textarea
 		this.style.overflow = "hidden";

@@ -26,9 +26,9 @@
   {% block extrahead %}
   {% endblock %}
   </head>
-  <body style="min-width:1024px;font-family: 'Open Sans', sans-serif;font-weight:300">
+  <body style="font-family: 'Open Sans', sans-serif;font-weight:300">
   {% block menu %}
-    <div style="min-width:1024px;fixed:top;margin-bottom:0;" id="nvb" class="navbar navbar-inverse">
+    <div style="fixed:top;margin-bottom:0;" id="nvb" class="navbar navbar-inverse">
       <div class="navbar-inner" id="nvbarinner">
         <div class="container" style="width:600px;padding:0 auto">
         {% block topbrandlogo %}
@@ -52,7 +52,6 @@
   {% block bottom_js %}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="{{STATIC_URL}}js/indexresize.js"></script>
   {% endblock %}
   {% block extra_bottom_js %}
   {% endblock %}
