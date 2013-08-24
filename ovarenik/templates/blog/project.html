@@ -93,21 +93,23 @@
           dx=-920;
           current_gallery_p -= 1;
         }
-        $("#fader-inner").animate({
-           marginLeft: ml+dx+"px"
-        },400);
-        if (current_gallery_p == total_gallery_length){
-      	  var ml = parseInt($("#fader-inner").css('margin-left').replace("px",""));
-          $("#fader-inner").animate({
-            marginLeft: ml+920+"px"
-          },400, function(){
-          $("#fader-inner").css("margin-left", "-1840px");
-          $("#fader-inner").animate({
-            marginLeft: "0px"
-          },400);
-          });
-          current_gallery_p = 0;
-          
+        if (dx == 920){
+          if (current_gallery_p != total_gallery_length){
+            $("#fader-inner").animate({
+              marginLeft: ml+dx+"px"
+            },400);
+          }
+          else {
+	          $("#fader-inner").animate({
+	            marginLeft: ml+2*920+"px"
+	          },200, function(){
+	          $("#fader-inner").css("margin-left", "-1840px");
+	          $("#fader-inner").animate({
+	            marginLeft: "0px"
+	          },200);
+	          });
+	          current_gallery_p = 0;
+          }
         }
     	e.stopPropagation();
     });
