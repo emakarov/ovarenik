@@ -69,6 +69,8 @@
 {% endblock wrapper %}
 {% block extra_bottom_js %}
     <script>
+    var total_gallery_length = $(".fader-inner-img").length;
+    var current_gallery_p = 0;
     function showgal(){
     	$('#fader').show();
     }
@@ -85,13 +87,26 @@
         var dx = 0
         if (ep<ww/2+360){
           dx=920;
+          current_gallery_p += 1;
         }
         else{
           dx=-920;
+          current_gallery_p -= 1;
         }
         $("#fader-inner").animate({
            marginLeft: ml+dx+"px"
         },400);
+        if (current_gallery_p == total_gallery_length){
+      	  var ml = parseInt($("#fader-inner").css('margin-left').replace("px",""));
+          $("#fader-inner").animate({
+            marginLeft: ml+920+"px"
+          },400);
+          $("#fader-inner").css("margin-left", "-1840px");
+          $("#fader-inner").animate({
+            marginLeft: "0px"
+          },400);
+          
+        }
     	e.stopPropagation();
     });
 
