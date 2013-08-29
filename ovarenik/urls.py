@@ -13,8 +13,8 @@ urlpatterns = patterns('',
     url(r'^photologue/', include('photologue.urls')),
     (r'^projects.*$', 'blog.views.projects'),
     (r'^$', 'blog.views.index'),
-    (r'^(?P<artid>.*)/$', 'blog.views.article'),
     url(r'^sendreply/$', 'blog.views.sendmail'),
+    (r'^(?P<artid>.*)/$', 'blog.views.article'),
 )
 
 urlpatterns += patterns('django.contrib.staticfiles.views',
