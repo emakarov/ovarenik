@@ -20,8 +20,15 @@
 {% block wrapper %}
   <div class="container white-transp-grad bgimg" id="bgimgdiv" style="padding:0;margin:0;width:100%;margin-top: -40px;">
   <center>
-  <img src="{{STATIC_URL}}images/wholemain.png">
+  <img src="{{STATIC_URL}}images/wholemain.png" usemap="#clickmap">
   </center>
+  
+  <map name="clickmap">
+    <area shape="circle" coords="250,300,100" href="/blog/" alt="New">
+    <area shape="circle" coords="1800,300,120" href="/about/" alt="Video">
+  </map>
+  
+  
   <!--
     <div id="leftring"  style="position:absolute;top:30%;width:10%;height:10%;margin-top:-5%;left:10%;cursor:pointer;cursor:hand;">
      <img id="wordnew" src="{{STATIC_URL}}images/leftring_main.png">
@@ -39,9 +46,11 @@
   </div> <!-- /container -->
 {% endblock %}
   {% block extra_bottom_js %}
+  <script src="{{STATIC_URL}}js/jquery.imagemap.js"></script>
   <script>
   $('document').ready(function(e){
   	disable_scroll();
+  	$('img[usemap]').rwdImageMaps();
   });
   
   var keys = [37, 38, 39, 40];
