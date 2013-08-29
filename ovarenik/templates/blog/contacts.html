@@ -86,9 +86,7 @@ function sendreply(){
 var name = $("#name").attr('value');
 var text = $("#text").attr('value');
 var email = $("#email").attr('value');
-var calc_region = $("#calc_region_reply").attr('value');
-var datasend = { calc_region: calc_region, name: name, text: text, email: email  };
-var mapobject = this;
+var datasend = { name: name, text: text, email: email  };
   $.post('/sendreply/', datasend, function(data) {
     $("#repliesdiv").html('Спасибо за Ваш отзыв!');
   });
