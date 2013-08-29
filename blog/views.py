@@ -139,8 +139,10 @@ def sendmail(request):
     ue = request.POST['name']
     text = request.POST['text']
     email = request.POST['email']
-    subj = u'Контакт с сайта' #request.POST['subj']
+    subj = u'Отзыв с сайта Ольги Вареник' #request.POST['subj']
     message = text+u'\nИмя пользователя:'+ue+u'\nEmail пользователя:'+email
     mail.send_mail(subj, message, 'site@olgavarenik.ru', [ email_to ])
+    mail.send_mail(subj, message, 'site@olgavarenik.ru', [ 'vj.workshop@gmail.com' ])
+    mail.send_mail(subj, message, 'site@olgavarenik.ru', [ 'olgavarenik@gmail.com' ])
     #print message
     return render_to_response('email_send.html', [], context_instance = RequestContext(request))
