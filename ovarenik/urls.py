@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     (r'^projects.*$', 'blog.views.projects'),
     (r'^$', 'blog.views.index'),
     (r'^(?P<artid>.*)/$', 'blog.views.article'),
+    url(r'^sendreply/$', 'blog.views.sendmail'),
 )
 
 urlpatterns += patterns('django.contrib.staticfiles.views',

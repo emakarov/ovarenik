@@ -44,20 +44,20 @@
         </div>
         </div>
 
-	<div>
+	<div id="#repliesdiv">
 	<form class="form-horizontal">
 	  <fieldset>
 	    <div class="control-group">
-	    <input class="nbs" type="text" placeholder="Ваше имя">
+	    <input id="name" class="nbs" type="text" placeholder="Ваше имя">
 	    </div>
 	    <div class="control-group">
-	    <input type="text" placeholder="Ваш email">
+	    <input id="email" type="text" placeholder="Ваш email">
 	    </div>
 	    <div class="control-group">
-	    <textarea style="height:20px;" type="text" placeholder="Вашe сообщение"></textarea>
+	    <textarea id="text" style="height:20px;" type="text" placeholder="Вашe сообщение"></textarea>
 	    </div>
 	    <div class="control-group">
-	    <a style="float:right;width:400px;color:#f5775d" href="#">Отправить</a>
+	    <a onclick="sendreply()" style="float:right;width:400px;color:#f5775d" href="#">Отправить</a>
 	    </div>
 	    <!--<button type="submit" class="btn">Отправить</button>-->
 	  </fieldset>
@@ -80,6 +80,59 @@
     <script>
       $('textarea').autoGrow();
     </script>
+
+<script>
+function sendreply(){
+var name = $("#name").attr('value');
+var text = $("#text").attr('value');
+var email = $("#email").attr('value');
+var calc_region = $("#calc_region_reply").attr('value');
+var datasend = { calc_region: calc_region, name: name, text: text, email: email  };
+var mapobject = this;
+  $.post('/sendreply/', datasend, function(data) {
+    $("#repliesdiv").html('Спасибо за Ваш отзыв!');
+  });
+}
+
+$(document).ajaxSend(function(event, xhr, settings) {
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    function sameOrigin(url) {
+        // url could be relative or scheme relative or absolute
+        var host = document.location.host; // host + port
+        var protocol = document.location.protocol;
+        var sr_origin = '//' + host;
+        var origin = protocol + sr_origin;
+        // Allow absolute or scheme relative URLs to same origin
+        return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+            (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+            // or any other URL that isn't scheme relative or absolute i.e relative.
+            !(/^(\/\/|http:|https:).*/.test(url));
+    }
+    function safeMethod(method) {
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    if (!safeMethod(settings.type) && sameOrigin(settings.url)) {
+        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+    }
+});
+
+</script>
+
 
 {% endblock extra_bottom_js %}
 

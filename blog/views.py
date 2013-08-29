@@ -20,6 +20,7 @@ import random
 import string
 from django.template.defaultfilters import slugify
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core import mail
 
 blog_index_html = settings.BLOG_INDEX_HTML
 blog_articlelist_html = settings.BLOG_ARTICLELIST_HTML
@@ -131,3 +132,15 @@ def codegenerator():
   chars = "".join( [random.choice(string.letters) for i in xrange(4)] ).lower()
   digits2 = "".join( [random.choice(string.digits) for i in xrange(3)] )
   return digits+chars+digits2
+
+def sendmail(request):
+    #email_to = 'olgavarenik@gmail.com'
+    email_to = 'evgeni.makarov@gmail.com'
+    ue = request.POST['name']
+    text = request.POST['text']
+    email = request.POST['email']
+    subj = u'Контакт с сайта' #request.POST['subj']
+    message = text+u'\nИмя пользователя:'+ue+u'\nEmail пользователя:'+email
+    mail.send_mail(subj, message, 'site@olgavarenik.ru', [ email_to ])
+    #print message
+    return render_to_response('email_send.html', [], context_instance = RequestContext(request))
