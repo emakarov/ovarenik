@@ -84,7 +84,7 @@
 <script>
 function sendreply(){
 var name = $("#name").attr('value');
-var text = $("#text").attr('value');
+var text = $("#text").val();
 var email = $("#email").attr('value');
 var datasend = { name: name, text: text, email: email  };
   $.post('/sendreply/', datasend, function(data) {
