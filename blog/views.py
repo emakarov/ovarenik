@@ -37,7 +37,9 @@ def blogtermpage(request,termslug):
     term = blog_models.Term.objects.filter(termslug = termslug)
     article_list = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
   else:
-    article_list = blog_models.Article.objects.filter(publish_status = '2').exclude(cover=None)
+    term = blog_models.Term.objects.filter(termslug = 'blog')
+    article_list = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+#    article_list = blog_models.Article.objects.filter(publish_status = '2').exclude(cover=None)
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   paginator = Paginator(article_list, 5) # Show 5 articles per page
   page = request.GET.get('page',1)
