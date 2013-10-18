@@ -102,7 +102,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
             </div>
           </div>
         </div>
-        <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=300 h=170 style="position:relative;z-index:5;width:287px;height:170px;background:#eee url({{p.cover.get_287x170_url}});background-size:300px">
+        <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=300 h=170 style="position:relative;z-index:5;width:287px;height:170px;background:#eee url({{p.cover.get_287x170_url|safe}});background-size:300px">
         </div>
       </div>
 
