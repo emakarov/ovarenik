@@ -116,7 +116,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
           </div>
         </div>
       </div>
-      <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=282 h=170 style="position:relative;z-index:5;width:272px;height:170px;background:#eee url({{p.cover.get_272x170_url}});background-size:282px">
+      <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=282 h=170 style="position:relative;z-index:5;width:272px;height:170px;background:#eee url('{{p.cover.get_272x170_url}}');background-size:282px">
       </div>
     </div>
     {% elif forloop.counter = 4 %}
@@ -130,7 +130,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
         </div>
       </div>
       <!--<img w=480 h=262 t=130 l=0 class="res" src="{{STATIC_URL}}images/testpic_2.png">-->
-      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=480 h=209 style="position:relative;z-index:5;width:480px;height:209px;background:#eee url({{p.cover.get_480x209_url}});background-size:480px 209px">
+      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=480 h=209 style="position:relative;z-index:5;width:480px;height:209px;background:#eee url('{{p.cover.get_480x209_url}}');background-size:480px 209px">
       </div>
     </div>
     {% elif forloop.counter = 5 %}
@@ -143,7 +143,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
           </div>
         </div>
       </div>
-      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=309 h=209 style="position:relative;width:309px;height:209px;background:#eee url({{p.cover.get_309x209_url}});background-size:309px 209px">
+      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=309 h=209 style="position:relative;width:309px;height:209px;background:#eee url('{{p.cover.get_309x209_url}}');background-size:309px 209px">
       </div>
     </div>
     {% endif %}
