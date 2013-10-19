@@ -17,9 +17,30 @@
       <div>
       <span style="font-size:36px">{{article.title}}</span>
       </div>
+      <!--
       <div style="margin-top:40px">
       <img style="width:800px;height:445px" src="{{article.cover.get_art_url}}">
       </div>
+      -->
+
+      <div id="fader">
+       <div id="fader-inner" style="position:relative;margin-top:135px;width:100%;margin-left:0px;">
+        <div class="fader-inner-img" style="width:800px;left:50%;position:absolute;">
+          <img style="cursor:pointer;cursor:hand;width:800px;height:445px" src="{{article.cover.get_art_url}}">
+        </div>
+        {% for p in article.gallery.sample %}
+        {% ifnotequal p.id article.cover.id %}
+        <div class="fader-inner-img" style="width:800px;left:50%;position:absolute;">
+          <img style="cursor:pointer;cursor:hand;width:800px;height:445px" src="{{p.get_art_url}}">
+        </div>
+        {% endifnotequal %}
+        {% endfor %}
+       </div>
+      </div>
+
+
+
+
       <div style="margin-top:30px">
       <span style="font-size:24px;font-weight:500">03</span><br>
       Сентября
@@ -59,3 +80,69 @@
 &nbsp;
 </div>
 {% endblock wrapper %}
+{% block extra_bottom_js %}
+    <script>
+    var total_gallery_length = $(".fader-inner-img").length;
+    var current_gallery_p = 0;
+    function showgal(){
+    	$('#fader').show();
+    }
+    function hidegal(){
+    	$('#fader').hide();
+    }
+    $('#fader').on('click',function(){
+      $(this).hide();	
+    });
+    $('#fader img').on('click',function(e){
+    	var ml = parseInt($("#fader-inner").css('margin-left').replace("px",""));
+        var ww = $(window).width();
+        var ep = e.clientX;
+        var dx = 0
+        if (ep<ww/2+360){
+          dx=920;
+          current_gallery_p += 1;
+        }
+        else{
+          dx=-920;
+          current_gallery_p -= 1;
+        }
+        if (dx == 920){
+          if (current_gallery_p != total_gallery_length){
+            $("#fader-inner").animate({
+              marginLeft: ml+dx+"px"
+            },400);
+          }
+          else {
+	          $("#fader-inner").animate({
+	            marginLeft: ml+2*920+"px"
+	          },400, function(){
+	          $("#fader-inner").css("margin-left", "-1840px");
+	          $("#fader-inner").animate({
+	            marginLeft: "0px"
+	          },400);
+	          });
+	          current_gallery_p = 0;
+          }
+        }
+        else {
+            $("#fader-inner").animate({
+              marginLeft: ml+dx+"px"
+            },400);
+        }
+        $("#mainpic").attr("src", $($(".fader-inner-img")[current_gallery_p]).children().attr('src'));
+    	e.stopPropagation();
+    });
+
+    $(".img-circle-li").on("mouseover",function(){
+      $(this).css('background','url({{STATIC_URL}}images/snbg.png?) 0px 0px no-repeat');
+    });
+    $(".img-circle-li").on("mouseout",function(){
+      $(this).css('background','');
+    });
+    $('.carousel').carousel({interval:false})
+    
+    $(".fader-inner-img").each(function(index){
+      $(this).css('margin-left', -(360+720*index+200*index)+"px");
+    });
+</script>
+{% endblock extra_bottom_js %}
