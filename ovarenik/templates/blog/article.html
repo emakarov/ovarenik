@@ -17,11 +17,12 @@
       <div>
       <span style="font-size:36px">{{article.title}}</span>
       </div>
-      <!--
       <div style="margin-top:40px">
+      <!--
       <img style="width:800px;height:445px" src="{{article.cover.get_art_url}}">
-      </div>
       -->
+      <img id="mainpic" onclick="showgal()" style="cursor:pointer;cursor:hand;width:800px;height:445px" src="{{article.cover.get_art_url}}">
+      </div>
 
       <div id="fader">
        <div id="fader-inner" style="position:relative;margin-top:135px;width:100%;margin-left:0px;">
