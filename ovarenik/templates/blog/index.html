@@ -18,6 +18,9 @@
       img.map{
     outline: none;
       }
+      .maparea {
+      	outline: 0;
+      }
 </style>
 {% endblock %}
 {% block wrapper %}
@@ -27,8 +30,8 @@
   </center>
   
   <map name="clickmap">
-    <area  shape="circle" coords="250,300,100" href="/blog/" alt="New">
-    <area  shape="circle" coords="1800,300,120" href="/about/" alt="Video">
+    <area class="maparea" shape="circle" coords="250,300,100" href="/blog/" alt="New">
+    <area class="maparea" shape="circle" coords="1800,300,120" href="/about/" alt="Video">
   </map>
   
   
