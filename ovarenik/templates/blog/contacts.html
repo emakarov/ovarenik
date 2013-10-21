@@ -27,7 +27,7 @@
   <a class="brand" id="brandtop" href="/"><img src="{{STATIC_URL}}images/small_logo.png" style="height:33px;"></a>
 {% endblock %}
 {% block wrapper %}
-    <div class="container white-transp-grad" style="padding:0;margin:0;width:100%">
+    <div id="contain" class="container white-transp-grad" style="padding:0;margin:0;width:100%">
  
      <div style="margin-top:78px;">
       <center>
@@ -82,6 +82,7 @@
     </script>
 
 <script>
+$("#contain").css('height',$(window).width()+'px');
 function sendreply(){
 var name = $("#name").val();
 var text = $("#text").val();
