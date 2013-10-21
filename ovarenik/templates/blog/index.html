@@ -15,6 +15,9 @@
       .navbar-inner{
       	opacity: 0.9;
       }
+      img.map{
+    outline: none;
+      }
 </style>
 {% endblock %}
 {% block wrapper %}
@@ -24,8 +27,8 @@
   </center>
   
   <map name="clickmap">
-    <area  hidefocus="true" shape="circle" coords="250,300,100" href="/blog/" alt="New">
-    <area  hidefocus="true" shape="circle" coords="1800,300,120" href="/about/" alt="Video">
+    <area  shape="circle" coords="250,300,100" href="/blog/" alt="New">
+    <area  shape="circle" coords="1800,300,120" href="/about/" alt="Video">
   </map>
   
   
