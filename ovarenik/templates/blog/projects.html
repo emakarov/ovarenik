@@ -86,7 +86,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     
     <div style="width:100%;height:450px;margin-top:80px;margin-bottom:60px;" id="projectloader">
     </div>
-    <div id="loadereventer"></div>
+    <div id="loadereventer">
+      <img src="/static/images/loadingvarenik.gif" style="display:none" id="imgloadergif">
+    </div>
     
     </div> <!-- /container -->
 
@@ -128,11 +130,13 @@ if(!(b=e)){var g={height:i.innerHeight,width:i.innerWidth};if(!g.height&&((b=h.c
     //$('#{{datasource_name}}addform_form').load("/backboneadmin/forms/{{app}}/{{mod}}/",function(){
     //   $( 'form' ).parsley();
     //});
+      $("#imgloadergif").show();
       $.get('/projectsblock/'+initiallimit+'/', function(data){ 
          $(data).appendTo("#projectloader");
          initiallimit = initiallimit+5;
          $("#bottombar").css('margin-top', parseInt($("#bottombar").css('margin-top').replace('px',''))+400+'px');
          activateres();
+         $("#imgloadergif").hide();
          $('#loadereventer').one('inview', function(){
            loadprojects();
          });
