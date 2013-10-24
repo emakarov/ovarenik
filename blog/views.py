@@ -104,6 +104,12 @@ def projects(request):
   photos18 = photos[0:18]
   params = { 'articles' : articles, 'photos' : photos, 'photos18' : photos18 }
   return render_to_response(blog_projects_html, params, context_instance = RequestContext(request))
+
+def projectsblock(request, lim):
+  term = blog_models.Term.objects.filter(termslug='projects') #reserved for projects
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)[lim:lim+5]
+  return render_to_response(blog_projectsblock_html, params, context_instance = RequestContext(request))
+
   
 def redactorimagejson(request):
   photos = Photo.objects.all().order_by('-id')

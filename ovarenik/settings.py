@@ -223,6 +223,7 @@ BLOG_INDEX_HTML = 'blog/index.html'
 BLOG_ARTICLELIST_HTML = 'blog/articlelist.html'
 BLOG_ARTICLE_HTML = 'blog/article.html'
 BLOG_PROJECTS_HTML = 'blog/projects.html'
+BLOG_PROJECTSBLOCK_HTML = 'blog/projects_block.html'
 
 BLOG_TEMPLATES = (
   ('blog/article.html',_("Simple article")),
