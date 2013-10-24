@@ -85,71 +85,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     </div>
     
     <div style="width:100%;height:450px;margin-top:80px;margin-bottom:60px;" id="projectloader">
-    
-    <div style="width:805px;height:450px;margin:0 auto;position:relative">
-    {% for p in articles %}
-      {% if forloop.counter = 1 %}
-      <div style="position:absolute;top:0;left:300px;background:white;width:220px;height:160px;font-size:14px">
-        {{ p.description|safe }}
-      </div>
-      {% elif forloop.counter = 2 %}
-      <div style="position:absolute;top:-52px;left:0px;width:287px;height:222px">
-        <div style="text-align:right;height:32px;padding-top:20px;background:#fff;">
-          <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
-            <div style="color:#f5775d">{{ p.title }}</div>
-            <div style="font-size:11px">
-            {{ p.small_title }}
-            </div>
-          </div>
-        </div>
-        <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=300 h=170 style="position:relative;z-index:5;width:287px;height:170px;background:#eee url('{{p.cover.get_287x170_url}}');background-size:300px">
-        </div>
-      </div>
-
-    {% elif forloop.counter = 3 %}
-    <div style="position:absolute;top:-52px;left:533px;width:272px;height:220px">
-      <div style="text-align:right;height:32px;padding-top:20px;background:#fff;">
-        <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
-          <div style="color:#f5775d">{{ p.title }}</div>
-          <div style="font-size:11px">
-            {{ p.small_title }}
-          </div>
-        </div>
-      </div>
-      <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=282 h=170 style="position:relative;z-index:5;width:272px;height:170px;background:#eee url('{{p.cover.get_272x170_url}}');background-size:282px">
-      </div>
-    </div>
-    {% elif forloop.counter = 4 %}
-    <div style="position:absolute;top:130px;left:0px;width:480px;height:262px;z-index:10;">
-      <div style="text-align:right;height:32px;padding-top:20px;">
-        <div class="restext" style="opacity:0;margin:32px 0;padding:0 10px;background:#fff;border:2px solid #f5775d;border-bottom:0;">
-          <div style="color:#f5775d;z-index:1">{{ p.title }}</div>
-          <div style="font-size:11px;z-index:1">
-            {{ p.small_title }}
-          </div>
-        </div>
-      </div>
-      <!--<img w=480 h=262 t=130 l=0 class="res" src="{{STATIC_URL}}images/testpic_2.png">-->
-      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=480 h=209 style="position:relative;z-index:5;width:480px;height:209px;background:#eee url('{{p.cover.get_480x209_url}}');background-size:480px 209px">
-      </div>
-    </div>
-    {% elif forloop.counter = 5 %}
-    <div style="position:relative;top:130px;left:496px;width:309px;height:262px;z-index:10;">
-      <div style="text-align:right;height:32px;padding-top:20px;">
-        <div class="restext" style="margin:32px 0;padding:0 10px;background:#fff;border:2px solid #f5775d;border-bottom:0;opacity:0;">
-          <div style="color:#f5775d">{{ p.title }}</div>
-          <div style="font-size:11px">
-            {{ p.small_title }}
-          </div>
-        </div>
-      </div>
-      <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=309 h=209 style="position:relative;width:309px;height:209px;background:#eee url('{{p.cover.get_309x209_url}}');background-size:309px 209px">
-      </div>
-    </div>
-    {% endif %}
-    {% endfor %}
-
-    
     </div>
     
     </div> <!-- /container -->
@@ -181,7 +116,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
 
     }
     
-    var initiallimit = 5;
+    var initiallimit = 0;
     function loadprojects(){
     
     //$('#{{datasource_name}}addform_form').load("/backboneadmin/forms/{{app}}/{{mod}}/",function(){
