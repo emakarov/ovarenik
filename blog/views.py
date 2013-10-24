@@ -107,6 +107,7 @@ def projects(request):
 
 def projectsblock(request, lim):
   term = blog_models.Term.objects.filter(termslug='projects') #reserved for projects
+  print lim, term
   articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)[lim:lim+5]
   return render_to_response(blog_projectsblock_html, params, context_instance = RequestContext(request))
 
