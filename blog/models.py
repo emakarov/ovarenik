@@ -60,3 +60,13 @@ class Article(models.Model):
         verbose_name = _("Blog article")
         verbose_name_plural = _("Blog articles")
         ordering = ['-id']
+
+class Quote(models.Model):
+    text = models.TextField(_("Text"),blank=True)
+    
+    def __unicode__(self):
+        return unicode(self.text)
+
+    class Meta:
+        verbose_name = _("Quote")
+        verbose_name_plural = _("Quotes")

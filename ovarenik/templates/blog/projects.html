@@ -135,7 +135,7 @@ if(!(b=e)){var g={height:i.innerHeight,width:i.innerWidth};if(!g.height&&((b=h.c
       $("#imgloadergif").show();
       $.get('/projectsblock/'+initiallimit+'/', function(data){ 
          $(data).appendTo("#projectloader");
-         initiallimit = initiallimit+5;
+         initiallimit = initiallimit+4;
          $("#bottombar").css('margin-top', parseInt($("#bottombar").css('margin-top').replace('px',''))+400+'px');
          activateres();
          $("#imgloadergif").hide();

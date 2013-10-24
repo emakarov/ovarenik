@@ -39,5 +39,7 @@ class TermAdmin(admin.ModelAdmin):
     list_display = ('termname', 'termslug')
     search_fields = ['termname']
 
+
 admin.site.register(Article,ArticleAdmin)
 admin.site.register(Term,TermAdmin)
+admin.site.register(Quote)

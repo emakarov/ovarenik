@@ -2,9 +2,8 @@
     {% for p in articles %}
       {% if forloop.counter = 1 %}
       <div style="position:absolute;top:0;left:300px;background:white;width:220px;height:160px;font-size:14px">
-        {{ p.description|safe }}
+        {{ quote }}
       </div>
-      {% elif forloop.counter = 2 %}
       <div style="position:absolute;top:-52px;left:0px;width:287px;height:222px">
         <div style="text-align:right;height:32px;padding-top:20px;">
           <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
@@ -17,7 +16,7 @@
         <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=300 h=170 style="position:relative;z-index:5;width:287px;height:170px;background:#eee url('{{p.cover.get_287x170_url}}');background-size:300px">
         </div>
       </div>
-    {% elif forloop.counter = 3 %}
+    {% elif forloop.counter = 2 %}
     <div style="position:absolute;top:-52px;left:533px;width:272px;height:220px">
       <div style="text-align:right;height:32px;padding-top:20px;">
         <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
@@ -30,7 +29,7 @@
       <div onclick="window.location.href='/{{p.slug}}/'" class="res" w=282 h=170 style="position:relative;z-index:5;width:272px;height:170px;background:#eee url('{{p.cover.get_272x170_url}}');background-size:282px">
       </div>
     </div>
-    {% elif forloop.counter = 4 %}
+    {% elif forloop.counter = 3 %}
     <div style="position:absolute;top:130px;left:0px;width:480px;height:262px;z-index:10;">
       <div style="text-align:right;height:32px;padding-top:20px;">
         <div class="restext" style="opacity:0;margin:32px 0;padding:0 10px;background:#fff;border:2px solid #f5775d;border-bottom:0;">
@@ -44,7 +43,7 @@
       <div  onclick="window.location.href='/{{p.slug}}/'" class="res" w=480 h=209 style="position:relative;z-index:5;width:480px;height:209px;background:#eee url('{{p.cover.get_480x209_url}}');background-size:480px 209px">
       </div>
     </div>
-    {% elif forloop.counter = 5 %}
+    {% elif forloop.counter = 4 %}
     <div style="position:relative;top:130px;left:496px;width:309px;height:262px;z-index:10;">
       <div style="text-align:right;height:32px;padding-top:20px;">
         <div class="restext" style="margin:32px 0;padding:0 10px;background:#fff;border:2px solid #f5775d;border-bottom:0;opacity:0;">
