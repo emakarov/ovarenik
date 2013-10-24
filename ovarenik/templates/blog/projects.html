@@ -154,7 +154,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     
     </div> <!-- /container -->
 
-<div class="navbar navbar-inverse" style="margin-top:120px;margin-bottom:0;background: url({{STATIC_URL}}images/headline.png);">
+<div class="navbar navbar-inverse" id="bottombar" style="margin-top:120px;margin-bottom:0;background: url({{STATIC_URL}}images/headline.png);">
 &nbsp;
 </div>
 {% endblock wrapper %}
@@ -189,6 +189,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
       $.get('/projectsblock/'+initiallimit+'/', function(data){ 
          $(data).appendTo("#projectloader");
          initiallimit = initiallimit+5;
+         $("#bottombar").css('margin-top', parseInt($("#bottombar").css('margin-top').replace('px',''))+400+'px');
       });
 
     }
