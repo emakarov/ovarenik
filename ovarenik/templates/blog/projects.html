@@ -165,6 +165,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     });
     $(window).load(function() {
     	onresizegallery();
+    	activateres();
     });
     
     function onresizegallery(){
@@ -190,10 +191,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
          $(data).appendTo("#projectloader");
          initiallimit = initiallimit+5;
          $("#bottombar").css('margin-top', parseInt($("#bottombar").css('margin-top').replace('px',''))+400+'px');
+         activateres();
       });
 
     }
     
+    function activateres(){
     $('.res').mouseover(function(){
           $(this).css("cursor","pointer");
           $(this).stop().delay( 300 ).animate({
@@ -220,6 +223,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
                 opacity: "0"
           }, 'slow', function(){el.css('background','#fff')});
     });
+    }
     
     var pics = [
      {% for p in photos %}
