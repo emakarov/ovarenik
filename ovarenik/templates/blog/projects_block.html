@@ -1,4 +1,4 @@
-    <div style="width:805px;height:410px;margin:0 auto;position:relative">
+    <div style="width:805px;height:410px;margin:0 auto;position:relative;z-index:{{a}}">
     {% for p in articles %}
       {% if forloop.counter = 1 %}
       <div style="position:absolute;top:0;left:300px;background:white;width:220px;height:160px;font-size:14px">
@@ -6,7 +6,7 @@
       </div>
       {% elif forloop.counter = 2 %}
       <div style="position:absolute;top:-52px;left:0px;width:287px;height:222px">
-        <div style="text-align:right;height:32px;padding-top:20px;background:#fff;">
+        <div style="text-align:right;height:32px;padding-top:20px;">
           <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
             <div style="color:#f5775d">{{ p.title }}</div>
             <div style="font-size:11px">
@@ -19,7 +19,7 @@
       </div>
     {% elif forloop.counter = 3 %}
     <div style="position:absolute;top:-52px;left:533px;width:272px;height:220px">
-      <div style="text-align:right;height:32px;padding-top:20px;background:#fff;">
+      <div style="text-align:right;height:32px;padding-top:20px;">
         <div class="restext" style="margin:32px 0;padding:0 10px;opacity:0;border:2px solid #f5775d;border-bottom:0;">
           <div style="color:#f5775d">{{ p.title }}</div>
           <div style="font-size:11px">

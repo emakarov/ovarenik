@@ -112,7 +112,7 @@ def projectsblock(request, lim):
   a = int(lim)
   b = a + 5
   articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)[a:b]
-  params = { 'articles' : articles }
+  params = { 'articles' : articles, 'a' : a }
   return render_to_response(blog_projectsblock_html, params, context_instance = RequestContext(request))
 
   
