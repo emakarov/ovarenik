@@ -25,6 +25,7 @@ from django.core import mail
 blog_index_html = settings.BLOG_INDEX_HTML
 blog_articlelist_html = settings.BLOG_ARTICLELIST_HTML
 blog_article_html = settings.BLOG_ARTICLE_HTML
+blog_projects_html = settings.BLOG_PROJECTS_HTML
 blog_projectsblock_html = settings.BLOG_PROJECTSBLOCK_HTML
 
 def index(request):
