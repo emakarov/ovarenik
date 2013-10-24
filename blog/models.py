@@ -20,7 +20,7 @@ class Term(models.Model):
     is_servicecat = models.BooleanField("Service category feature", help_text = "Service category feature")
     
     def __unicode__(self):
-        return self.termname
+        return unicode(self.termname)
 
     def articles_count(self):
         return len(Article.objects.filter(terms=self, publish_status = '2').exclude(cover=None))
@@ -54,7 +54,7 @@ class Article(models.Model):
     template = models.CharField(max_length=100, choices=settings.BLOG_TEMPLATES)
 
     def __unicode__(self):
-        return self.title
+        return unicode(self.title)
 
     class Meta:
         verbose_name = _("Blog article")
