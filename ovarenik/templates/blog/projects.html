@@ -84,7 +84,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
      <center><img style="width:200px" src="{{STATIC_URL}}images/biglogo_1.png"></center>
     </div>
     
-    <div style="width:100%;height:450px;margin-top:80px;margin-bottom:60px;">
+    <div style="width:100%;height:450px;margin-top:80px;margin-bottom:60px;" id="projectloader">
     
     <div style="width:805px;height:450px;margin:0 auto;position:relative">
     {% for p in articles %}
@@ -177,6 +177,19 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
 	  $(this).css('left',init+df+"px")
 	});
     	}
+
+    }
+    
+    var initiallimit = 5;
+    function loadprojects(){
+    
+    //$('#{{datasource_name}}addform_form').load("/backboneadmin/forms/{{app}}/{{mod}}/",function(){
+    //   $( 'form' ).parsley();
+    //});
+      $.get('/projectsblock/'+initiallimit+'/', function(data){ 
+         $(data).appendTo("#projectloader");
+         initiallimit = initiallimit+5;
+      });
 
     }
     
