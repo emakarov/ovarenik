@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block subtitle %}{{ article.title }} | {% endblock %}
+{% templatetag openblock %} {% load pytils_dt %}{% templatetag closeblock %}  
+
 {% block topmenuitems %}
  <li><a href="/about/">О ДИЗАЙНЕРЕ</a></li>
  <li><a href="/projects/">ПРОЕКТЫ</a></li>
