@@ -12,7 +12,11 @@
 {% block wrapper %}
  <div class="container white-transp-grad" style="padding:0;margin:0;width:100%">
     <img onclick="window.location.href='/blog/art/prev/{{article.id}}/'" src="{{STATIC_URL}}images/leftarr.png" style="cursor:pointer;cursor:hand;position:fixed;top:50%;left:5%;width:20px;">
+    <span style="top: 50%;position: fixed;margin-top: 50px;margin-left: 25px;font-size: 12px;">
+  Предыдущий проект</span>
     <img onclick="window.location.href='/blog/art/next/{{article.id}}/'" src="{{STATIC_URL}}images/rightarr.png" style="cursor:pointer;cursor:hand;position:fixed;top:50%;right:5%;width:20px;">
+    <span style="top: 50%;position: fixed;margin-top: 50px;right: 25px;font-size: 12px;">
+  Следующий проект</span>
      <div style="margin-top:36px;">
       <center>
       <div style="margin-top:36px">      
