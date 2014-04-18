@@ -26,6 +26,7 @@ blog_index_html = settings.BLOG_INDEX_HTML
 blog_articlelist_html = settings.BLOG_ARTICLELIST_HTML
 blog_article_html = settings.BLOG_ARTICLE_HTML
 blog_projects_html = settings.BLOG_PROJECTS_HTML
+blog_projects_html = settings.BLOG_SERVICES_HTML
 blog_projectsblock_html = settings.BLOG_PROJECTSBLOCK_HTML
 
 def index(request):
@@ -105,6 +106,13 @@ def projects(request):
   photos18 = photos[0:18]
   params = { 'articles' : articles, 'photos' : photos, 'photos18' : photos18 }
   return render_to_response(blog_projects_html, params, context_instance = RequestContext(request))
+
+def services(request):
+  term = blog_models.Term.objects.filter(termslug='services') #reserved for services
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+  params = { 'articles' : articles }
+  return render_to_response(blog_projects_html, params, context_instance = RequestContext(request))
+
 
 def projectsblock(request, lim):
   term = blog_models.Term.objects.filter(termslug='projects') #reserved for projects
