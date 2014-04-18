@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% templatetag openblock %} {% load pytils_dt %}{% templatetag closeblock %}  
+{% block extrahead %}
+  <style>
+  a:hover{
+    color: #000;
+    text-decoration:none;
+  }
+  </style>
+  {% endblock %}
+{% block topmenuitems %}
+ <li><a href="/about/">О ДИЗАЙНЕРЕ</a></li>
+ <li><a href="/projects/">ПРОЕКТЫ</a></li>
+ <li class="active"><a href="/blog/">БЛОГ</a></li>
+ <li><a href="/contacts/">КОНТАКТЫ</a></li>
+{% endblock topmenuitems %}
+{% block topbrandlogo %}
+  <a class="brand" id="brandtop" href="/"><img src="{{STATIC_URL}}images/small_logo.png" style="height:33px;"></a>
+{% endblock %}
+{% block wrapper %}
+    <div class="container white-transp-grad" style="padding:0;margin:0;width:100%">
+ 
+     <div style="margin-top:78px;">
+      <center>
+        <span style="font-size:50px;">Наши услуги</span>
+        <!--
+        <img style="height:39px" src="{{STATIC_URL}}images/myblog.png">
+        -->
+        <div style="width:110px;border-top:1px solid #ccc;margin-top:49px;padding-bottom:12px;">&nbsp;</div>
+        <div style="width:800px;font-size:20px;">
+          Приносим новые идеи в Ваш дом
+        </div>
+        <div style="width:800px;border-top:1px solid #ccc;margin-top:40px;padding-bottom:20px;">&nbsp;</div>
+      </center>
+    </div>
+    </div> <!-- /container -->
+
+<div class="navbar navbar-inverse" style="margin:20px 0 0;height:20px;background: url({{STATIC_URL}}images/headline.png);">
+&nbsp;
+</div>
+{% endblock wrapper %}
