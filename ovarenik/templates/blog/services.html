@@ -12,7 +12,6 @@
     width:20px;
     height:20px;
     border-radius:10px
-    border:1px solid #eee;
   }
   .img-number-active{
     padding:0 5px;
@@ -129,6 +128,10 @@
 
   {% block extra_bottom_js_2 %}
   <script>
+  $(document).on('ready', function(){
+   $(".img-number").css("border",'1px solid #eee');
+   $($(".img-number")[0]).css("border",'1px solid red');
+  });
   function change_color_circle(i){
    var el = $(".img-number")[i];
    $(".img-number").css("border",'1px solid #eee');
