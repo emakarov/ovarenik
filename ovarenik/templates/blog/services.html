@@ -68,27 +68,27 @@
 	<span style="margin-top:20px;font-size:20px;text-transform:uppercase;">{% lorem 3 w %}</span>
 	<div class="tabbable tabs-left" style="width:900px;padding-top:40px;"> <!-- Only required for left/right tabs -->
 	  <ul class="nav nav-tabs">
-	    <li class="bottomli active">
+	    <li onclick="change_color_circle(0)" class="bottomli active">
 	    <a class="bottomlia" href="#tab1" data-toggle="tab">
 	    <span class="img-circle img-number img-number-active">1</span>
 	    Section 1</a></li>
-	    <li class="bottomli">
+	    <li onclick="change_color_circle(0)" class="bottomli">
 	    <a class="bottomlia" href="#tab2" data-toggle="tab">
             <span class="img-circle img-number">2</span>
 	    Section 2</a></li>
-	    <li class="bottomli">
+	    <li onclick="change_color_circle(0)" class="bottomli">
 	    <a class="bottomlia" href="#tab3" data-toggle="tab">
 	    <span class="img-circle img-number">3</span>
 	    Section 3</a></li>
-	    <li class="bottomli">
+	    <li onclick="change_color_circle(0)" class="bottomli">
 	    <a class="bottomlia" href="#tab4" data-toggle="tab">
  	    <span class="img-circle img-number">4</span>
 	    Section 4</a></li>
-	    <li class="bottomli">
+	    <li onclick="change_color_circle(0)" class="bottomli">
 	    <a class="bottomlia" href="#tab5" data-toggle="tab">
  	    <span class="img-circle img-number">5</span>
 	    Section 5</a></li>
-	    <li class="bottomli">
+	    <li onclick="change_color_circle(0)" class="bottomli">
 	    <a class="bottomlia" href="#tab6" data-toggle="tab">
  	    <span class="img-circle img-number">6</span>
 	    Section 6</a></li>
@@ -127,9 +127,10 @@
 {% endblock wrapper %}
 
   {% block extra_bottom_js_2 %}
-  $(".bottomli").on("click", function(){
-   $(".img-number").removeClass("img-number-active");
-   $($(this).firstElementChild.firstElementChild).addClass("img-number-active");
-  });
+  function change_color_circle(i){
+   var el = $(".img-number")[i];
+   $(".img-number").css("border",'1px solid #eee');
+   $(el).css("border",'1px solid red');
+  }
   {% endblock %}
 
