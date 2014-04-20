@@ -127,10 +127,12 @@
 {% endblock wrapper %}
 
   {% block extra_bottom_js_2 %}
+  <script>
   function change_color_circle(i){
    var el = $(".img-number")[i];
    $(".img-number").css("border",'1px solid #eee');
    $(el).css("border",'1px solid red');
   }
+  </script>
   {% endblock %}
 
