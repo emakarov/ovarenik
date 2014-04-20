@@ -127,9 +127,9 @@
 {% endblock wrapper %}
 
   {% block extra_bottom_js_2 %}
-  $(".bottomlia").on("click", function(){
+  $(".bottomli").on("click", function(){
    $(".img-number").removeClass("img-number-active");
-   $($(this).firstChild()).addClass("img-number-active");
+   $($(this).firstElementChild.firstElementChild).addClass("img-number-active");
   });
   {% endblock %}
 
