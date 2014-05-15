@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,8 @@
     <meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
       {% block title %}
-      <title>{% block subtitle %}{% endblock %}Дизайнер интерьеров Ольга Вареник</title>
+      <title>{% block subtitle %}{% endblock %}
+        {% trans "Interior designer Olga Varenik" %}</title>
       {% endblock %}
     <meta name="description" content="">
     <meta name="author" content="">
