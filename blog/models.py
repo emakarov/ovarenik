@@ -32,6 +32,7 @@ class Term(models.Model):
 # Create your models here.
 class Article(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,verbose_name=_('Author'),help_text=_('Author'))
+    language = models.CharField(_("Translation language"), blank=True, null=True, max_length=4, choices=settings.LANGUAGES)
     title = models.CharField(_("Title"), max_length=255, help_text = "title")
     slug = models.SlugField(_("Slug field"), help_text = "slug (shortened url)")
     description =  models.TextField(_("Description"),  blank=True, default='', help_text = _("Description"))
