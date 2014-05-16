@@ -26,8 +26,8 @@ class Term(models.Model):
         return len(Article.objects.filter(terms=self, publish_status = '2').exclude(cover=None))
 
     class Meta:
-        verbose_name = _("Blog term")
-        verbose_name_plural = _("Blog terms")
+        verbose_name = "Blog term"
+        verbose_name_plural = "Blog terms"
 
 # Create your models here.
 class Article(models.Model):
@@ -58,8 +58,8 @@ class Article(models.Model):
         return unicode(self.title)
 
     class Meta:
-        verbose_name = _("Blog article")
-        verbose_name_plural = _("Blog articles")
+        verbose_name = "Blog article"
+        verbose_name_plural = "Blog articles"
         ordering = ['-id']
 
 class Quote(models.Model):
@@ -70,5 +70,5 @@ class Quote(models.Model):
         return unicode(self.text)
 
     class Meta:
-        verbose_name = _("Quote")
-        verbose_name_plural = _("Quotes")
+        verbose_name = "Quote"
+        verbose_name_plural = "Quotes"
