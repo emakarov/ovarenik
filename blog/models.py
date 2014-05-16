@@ -64,6 +64,7 @@ class Article(models.Model):
 
 class Quote(models.Model):
     text = models.TextField(_("Text"),blank=True)
+    language = models.CharField(_("Translation language"), blank=True, null=True, max_length=4, choices=settings.LANGUAGES)
     
     def __unicode__(self):
         return unicode(self.text)
