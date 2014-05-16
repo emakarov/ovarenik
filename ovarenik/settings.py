@@ -142,9 +142,9 @@ TEMPLATE_DIRS = (
 )
 
 LOCALE_PATHS = (
-  path.join(PROJECT_ROOT,'locale'),
+  path.join(path.dirname(path.dirname(path.abspath(__file__)), 'locale'),
 )
-#print LOCALE_PATHS
+print LOCALE_PATHS
 
 INSTALLED_APPS = (
     'suit',
