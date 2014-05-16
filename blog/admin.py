@@ -17,9 +17,10 @@ from models import *
 from django import forms
 
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('title', 'publish_status')
+    list_display = ('title', 'publish_status','language')
     list_per_page = 20
     list_filter = ['user','terms']
+    list_editable = ['language']
     prepopulated_fields = {"slug": ("title",)}
     class Media:
         css = {
@@ -39,7 +40,11 @@ class TermAdmin(admin.ModelAdmin):
     list_display = ('termname', 'termslug')
     search_fields = ['termname']
 
+class QuoteAdmin(admin.ModelAdmin):
+    list_display = ('text','language')
+    list_editable = ['language']
+
 
 admin.site.register(Article,ArticleAdmin)
 admin.site.register(Term,TermAdmin)
-admin.site.register(Quote)
+admin.site.register(Quote,QuoteAdmin)
