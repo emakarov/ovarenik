@@ -67,9 +67,13 @@
   </div>
 </div>
 <div class="navbar navbar-inverse" style="margin:80px 0 0;height:20px;background: url({{STATIC_URL}}images/headline.png);">
-&nbsp;
+    {% include "blog/translator_form.html" %}
 </div>
 {% endblock wrapper %}
+
+{% block bottomdiv %}
+{% endblock %}
+
 {% block extra_bottom_js %}
     <script>
     var total_gallery_length = $(".fader-inner-img").length;
