@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %
 {% block extrahead %}
 <style>
 .img-polaroid {
@@ -26,7 +27,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
 
 </style>
 {% endblock %}
-{% block subtitle %}Проекты | {% endblock %}
+{% block subtitle %}{% trans "Projects" %} | {% endblock %}
 {% block topbrandlogo %}
   <a class="brand" id="brandtop" href="/"><img src="{{STATIC_URL}}images/small_logo.png" style="height:33px;"></a>
 {% endblock %}
@@ -75,7 +76,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     {% endfor %}
     </div>
     <div style="top:520px;position:absolute;width:100%;color:#fff;font-size:20px;">
-      <center>МОИ ПРОЕКТЫ</center>
+      <center>{% trans "My projects" %}</center>
     </div>
     
     </div>
