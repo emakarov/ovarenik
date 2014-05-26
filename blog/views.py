@@ -129,10 +129,10 @@ def projectsblock(request, lim):
   articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2',language=lang).exclude(cover=None)[a:b]
   qn = b/4
   try:
-    quote = blog_models.Quote.objects.get(id=qn)
+    quote = blog_models.Quote.objects.filter(language=lang)[qn]
   except:
     try:
-      quote = blog_models.Quote.objects.get(id=1)
+      quote = blog_models.Quote.objects.filter(language=lang)[qn]
     except:
       quote = ''
   params = { 'articles' : articles, 'a' : a, 'quote' : quote }
