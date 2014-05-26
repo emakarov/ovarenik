@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-  {% block extrahead %}
+{% load i18n %}  
+{% block extrahead %}
   <style>
   a:hover{
     color: #000;
@@ -17,13 +18,6 @@
   </style>
   {% endblock %}
 {% block subtitle %}Контакты | {% endblock %}
-{% block topmenuitems %}
- <li><a href="/about/">О ДИЗАЙНЕРЕ</a></li>
- <li><a href="/projects/">ПРОЕКТЫ</a></li>
- <li><a href="/blog/">БЛОГ</a></li>
- <li><a href="/services/">УСЛУГИ</a></li>
- <li class="active"><a href="/contacts/">КОНТАКТЫ</a></li>
-{% endblock topmenuitems %}
 {% block topbrandlogo %}
   <a class="brand" id="brandtop" href="/"><img src="{{STATIC_URL}}images/small_logo.png" style="height:33px;"></a>
 {% endblock %}
@@ -40,7 +34,9 @@
           <div style="padding-top:65px;font-size:28px;color:#676767">+7 (987) 5557070</div>
           <div style="padding-top:35px;font-size:24px;color:#676767">olgavarenik@gmail.com</div>
           <div style="padding-top:35px;font-size:24px;line-height:26px;color:#676767">
-          г. Нижний Новгород<br>ул. Родионова, 165 корп. 8<br>3 этаж в ИЦ "НИЦЦА"
+          {% blocktrans %}
+          Nizhny Novgorod, Russia<br>Rodionova st. 165 k.8<br>Stage 3 at TC "NIZZA"
+          {% endblocktrans %}
           </div>
         </div>
         </div>
@@ -49,16 +45,16 @@
 	<form class="form-horizontal">
 	  <fieldset>
 	    <div class="control-group">
-	    <input id="name" class="nbs" type="text" placeholder="Ваше имя">
+	    <input id="name" class="nbs" type="text" placeholder="{% trans "Your name" %}">
 	    </div>
 	    <div class="control-group">
-	    <input id="email" type="text" placeholder="Ваш email">
+	    <input id="email" type="text" placeholder="{% trans "Your email" %}">
 	    </div>
 	    <div class="control-group">
-	    <textarea id="text" style="height:20px;" type="text" placeholder="Вашe сообщение"></textarea>
+	    <textarea id="text" style="height:20px;" type="text" placeholder="{% trans "Your message" %}></textarea>
 	    </div>
 	    <div class="control-group">
-	    <a onclick="sendreply()" style="float:right;width:400px;color:#f5775d" href="#">Отправить</a>
+	    <a onclick="sendreply()" style="float:right;width:400px;color:#f5775d" href="#">{% trans "Send" %}</a>
 	    </div>
 	    <!--<button type="submit" class="btn">Отправить</button>-->
 	  </fieldset>
