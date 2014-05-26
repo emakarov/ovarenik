@@ -93,11 +93,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
     </div>
     
     </div> <!-- /container -->
-
 <div class="navbar navbar-inverse" id="bottombar" style="margin-top:120px;margin-bottom:0;background: url({{STATIC_URL}}images/headline.png);">
 &nbsp;
 </div>
 {% endblock wrapper %}
+  {% block bottomdiv %}
+  {% endblock %}
 {% block extra_bottom_js %}
     <script>
 (function(d){var p={},e,a,h=document,i=window,f=h.documentElement,j=d.expando;d.event.special.inview={add:function(a){p[a.guid+"-"+this[j]]={data:a,$element:d(this)}},remove:function(a){try{delete p[a.guid+"-"+this[j]]}catch(d){}}};d(i).bind("scroll resize",function(){e=a=null});!f.addEventListener&&f.attachEvent&&f.attachEvent("onfocusin",function(){a=null});setInterval(function(){var k=d(),j,n=0;d.each(p,function(a,b){var c=b.data.selector,d=b.$element;k=k.add(c?d.find(c):d)});if(j=k.length){var b;
