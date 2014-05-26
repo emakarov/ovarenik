@@ -35,12 +35,13 @@ def index(request):
   return render_to_response(blog_index_html, {'photo' : p }, context_instance = RequestContext(request))
   
 def blogtermpage(request,termslug):
+  lang = request.LANGUAGE_CODE
   if termslug is not None:
     term = blog_models.Term.objects.filter(termslug = termslug)
-    article_list = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+    article_list = blog_models.Article.objects.filter(terms__in = term, publish_status = '2',language=lang).exclude(cover=None)
   else:
     term = blog_models.Term.objects.filter(termslug = 'blog')
-    article_list = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+    article_list = blog_models.Article.objects.filter(terms__in = term, publish_status = '2',language=lang).exclude(cover=None)
 #    article_list = blog_models.Article.objects.filter(publish_status = '2').exclude(cover=None)
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   paginator = Paginator(article_list, 5) # Show 5 articles per page
@@ -59,12 +60,13 @@ def blogtermpage(request,termslug):
 
 def search(request):
     q = None
+    lang = request.LANGUAGE_CODE
     try:
       q = request.GET['s']
     except:
       pass
     if q:
-      articles = blog_models.Article.objects.filter(Q(title__icontains=q) | Q(text__icontains=q), publish_status = '2')
+      articles = blog_models.Article.objects.filter(Q(title__icontains=q) | Q(text__icontains=q), publish_status = '2',language=lang)
     else:
       articles = blog_models.Article.all().none()
     terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
@@ -72,19 +74,21 @@ def search(request):
     return render_to_response(blog_articlelist_html(request), params, context_instance = RequestContext(request))
   
 def article(request,artid):
+  lang = request.LANGUAGE_CODE
   try:
     article = blog_models.Article.objects.get(id=artid)
   except:
     article = blog_models.Article.objects.get(slug=artid)
-  sidebar = blog_models.Article.objects.filter(publish_status = '2').exclude(id=article.id).order_by('?')[0:20]
+  sidebar = blog_models.Article.objects.filter(publish_status = '2',language=lang).exclude(id=article.id).order_by('?')[0:20]
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   params = { 'article' : article, 'sidebar' : sidebar, 'terms' : terms }
   return render_to_response(article.template, params, context_instance = RequestContext(request))
 
 def transition(request,transition,artid):
+  lang = request.LANGUAGE_CODE
   a = blog_models.Article.objects.get(id=artid)
   term = a.terms.all()[0]
-  a_t = blog_models.Article.objects.filter(terms = term)
+  a_t = blog_models.Article.objects.filter(terms = term,language=lang)
   if transition == "next":
     try:
       article = a_t.filter(id__gt=a.id).order_by('id')[0]
@@ -99,8 +103,9 @@ def transition(request,transition,artid):
 
 
 def projects(request):
+  lang = request.LANGUAGE_CODE
   term = blog_models.Term.objects.filter(termslug='projects') #reserved for projects
-  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2',language=lang).exclude(cover=None)
   galleries = Gallery.objects.filter(gallery_articles__in=articles)
   photos = Photo.objects.filter(galleries__in=galleries).order_by('?').select_related('galleries__gallery_articles')
   photos18 = photos[0:18]
@@ -108,18 +113,20 @@ def projects(request):
   return render_to_response(blog_projects_html, params, context_instance = RequestContext(request))
 
 def services(request):
+  lang = request.LANGUAGE_CODE
   term = blog_models.Term.objects.filter(termslug='services') #reserved for services
-  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2',language=lang).exclude(cover=None)
   params = { 'articles' : articles }
   return render_to_response(blog_services_html, params, context_instance = RequestContext(request))
 
 
 def projectsblock(request, lim):
+  lang = request.LANGUAGE_CODE
   term = blog_models.Term.objects.filter(termslug='projects') #reserved for projects
-  print lim, term
+  #print lim, term
   a = int(lim)
   b = a + 4
-  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)[a:b]
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2',language=lang).exclude(cover=None)[a:b]
   qn = b/4
   try:
     quote = blog_models.Quote.objects.get(id=qn)
