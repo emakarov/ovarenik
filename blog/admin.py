@@ -20,7 +20,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'publish_status','language')
     list_per_page = 20
     list_filter = ['user','terms']
-    list_editable = ['language']
+    list_editable = ['publish_status','language']
     prepopulated_fields = {"slug": ("title",)}
     class Media:
         css = {
