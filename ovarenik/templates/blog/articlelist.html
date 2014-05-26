@@ -16,11 +16,11 @@
  
      <div style="margin-top:78px;">
       <center>
-        <!--<span style="font-size:50px;">Мой Блог</span>-->
-        <img style="height:39px" src="{{STATIC_URL}}images/myblog.png">
+        <span style="font-size:50px;">{% trans "My Blog" %}</span>
+        <!--<img style="height:39px" src="{{STATIC_URL}}images/myblog.png">-->
         <div style="width:110px;border-top:1px solid #ccc;margin-top:49px;padding-bottom:12px;">&nbsp;</div>
         <div style="width:800px;font-size:20px;">
-          Приносим новые идеи в Ваш дом
+          {% trans "Bringing Ideas to Your Home" %}
         </div>
         <div style="width:800px;border-top:1px solid #ccc;margin-top:40px;padding-bottom:20px;">&nbsp;</div>
 
@@ -40,7 +40,11 @@
       <span style="font-size:24px;color: #939393;font-weight: 400;">{{a.publish_date|date:"d"}}</span><br>
       <!--<span style="color: #939393;">{{a.publish_date|date:"F"}}</span>-->
       {% if a.publish_date %}
-      <span style="color: #939393;">{{a.publish_date|ru_strftime:"%B"}}</span>
+      {% ifequal request.LANGUAGE_CODE 'ru' %}
+        <span style="color: #939393;">{{a.publish_date|ru_strftime:"%B"}}</span>
+      {% else %}
+        <span style="color: #939393;">{{a.publish_date|date:"F"}}</span>
+      {% endifequal %}
       {% endif %}
       </div>
       <div style="color: #939393;margin-top:40px;width:600px;text-align:left;margin-bottom: 40px;">
