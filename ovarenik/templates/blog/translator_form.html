@@ -1,0 +1,16 @@
+  <center>
+  	<form name="changelang_0" style="margin:0;display:none;" action="/i18n/setlang/" method="post">
+	{% csrf_token %}
+	<input name="next" type="hidden" value="{{request.url}}" />
+	<input type="hidden" name="language" value="ru" />
+	</form>
+	<a href="javascript:void(1);" onClick="document.changelang_0.submit();">
+	Русский
+	</a> | 
+	<form name="changelang_1" style="margin:0;display:none;" action="/i18n/setlang/" method="post">
+	{% csrf_token %}
+	<input name="next" type="hidden" value="{{request.url}}" />
+	<input type="hidden" name="language" value="en" />
+        </form>
+        <a href="javascript:void(1);" onClick="document.changelang_1.submit();">English</a>
+  </center>
