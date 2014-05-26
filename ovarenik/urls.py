@@ -5,6 +5,10 @@ from django.conf import settings
 
 admin.autodiscover()
 
+urlpatterns = patterns('',
+    (r'^i18n/setlang/', 'blog.views.set_language'),
+)
+
 #urlpatterns = i18n_patterns('',
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
