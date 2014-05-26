@@ -82,7 +82,7 @@
   {% block bottomdiv %}
   <div class="navbar navbar-inverse" style="margin-bottom:0;position:absolute;width:100%;bottom:0;height:20px;background: url({{STATIC_URL}}images/headline.png);">
   <center>
-  	<form name="changelang_0" style="margin:0" action="/i18n/setlang/" method="post">
+  	<form name="changelang_0" style="margin:0;display:none;" action="/i18n/setlang/" method="post">
 	{% csrf_token %}
 	<input name="next" type="hidden" value="{{request.url}}" />
 	<input type="hidden" name="language" value="ru" />
@@ -90,7 +90,7 @@
 	<a href="javascript:void(1);" onClick="document.changelang_0.submit();">
 	Русский
 	</a> | 
-	<form name="changelang_1" style="margin:0" action="/i18n/setlang/" method="post">
+	<form name="changelang_1" style="margin:0;display:none;" action="/i18n/setlang/" method="post">
 	{% csrf_token %}
 	<input name="next" type="hidden" value="{{request.url}}" />
 	<input type="hidden" name="language" value="en" />
