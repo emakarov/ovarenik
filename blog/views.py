@@ -78,7 +78,7 @@ def article(request,artid):
   try:
     article = blog_models.Article.objects.get(id=artid)
   except:
-    article = blog_models.Article.objects.get(slug=artid)
+    article = blog_models.Article.objects.get(slug=artid,language=lang)
   sidebar = blog_models.Article.objects.filter(publish_status = '2',language=lang).exclude(id=article.id).order_by('?')[0:20]
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   params = { 'article' : article, 'sidebar' : sidebar, 'terms' : terms }
