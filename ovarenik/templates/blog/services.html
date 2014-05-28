@@ -93,7 +93,7 @@ A public space needs design that would attract people’s attention, which is wh
 	    <span class="img-circle img-number img-number-active">1</span>
 	    </div>
 	    <div class="span11">
-	    Эскизный проект
+	    {% trans "Sketch design" %}
 	    </div>
 	    </div>
 	    </a>
@@ -103,11 +103,13 @@ A public space needs design that would attract people’s attention, which is wh
 	    <li onclick="change_color_circle(1)" class="bottomli">
 	    <a class="bottomlia" href="#tab2" data-toggle="tab">
             <span class="img-circle img-number">2</span>
-	    Визаулизация интерьера 3D</a></li>
+	    {% trans "3D interior rendering" %}
+	    </a></li>
 	    <li onclick="change_color_circle(2)" class="bottomli">
 	    <a class="bottomlia" href="#tab3" data-toggle="tab">
 	    <span class="img-circle img-number">3</span>
-	    Рабочий проект</a></li>
+	    {% trans "Detail project" %}
+	    </a></li>
 	    <li onclick="change_color_circle(3)" class="bottomli">
 	    <a class="bottomlia" href="#tab4" data-toggle="tab">
 	    <div class="row-fluid">
@@ -115,7 +117,7 @@ A public space needs design that would attract people’s attention, which is wh
  	      <span class="img-circle img-number">4</span>
 	     </div>
 	     <div class="span11">
-	     Проектирование инженерных систем
+	     {% trans "Engineering systems." %}
 	     </div>
 	    </div>
 	    </a>
@@ -123,45 +125,82 @@ A public space needs design that would attract people’s attention, which is wh
 	    <li onclick="change_color_circle(4)" class="bottomli">
 	    <a class="bottomlia" href="#tab5" data-toggle="tab">
  	    <span class="img-circle img-number">5</span>
-	    Авторский надзор</a></li>
+ 	    {% trans "Designer supervision" %}
+	    </a></li>
 	    <li onclick="change_color_circle(5)" class="bottomli">
 	    <a class="bottomlia" href="#tab6" data-toggle="tab">
  	    <span class="img-circle img-number">6</span>
-	    Декорирование помещения</a></li>
+ 	    {% trans "Room decoration" %}
+	    Декорирование помещения
+	    </a></li>
 	  </ul>
 	  <div class="tab-content">
 	    <div class="tab-pane active" id="tab1" style="text-align:left">
 	      <p>
+	  {% ifequal request.LANGUAGE_CODE 'en' %}
+           Designing is what the whole process of interior design is based on. The foundation you lay determines your home decor.<br><br>
+To get started, it is very important to get acquainted. I will learn your preferences, wishes and dreams to implement them later in your home decor or to tell you what should be avoided in your case, and what you should strive for. So we set to work.
+<br><br>
+We take the measurements, photograph the object and analyze all existing communications and other features of the object. All data will be included in the sketch design, which helps to visualize the future interior. It includes the planning concept and design decisions for ceiling and lighting. 
+<br><br>
+Designing doesn’t depend on the style of the room, so you don’t have to care about any other stage of design when designing your object, whether it is a color scheme of the room, its lighting, look and feel, or anything else. And this, in fact, is very well, because all your energy will be properly directed to the solution of one problem, rather than all of them at once. We will offer all possible planning decisions, discuss them, and choose the best one. All of the remaining phases of the project will be facile and unstrained on the basis of competent planning.
+           {% else %}
 	      Планировка - это тот фундамент, на котором держится весь процесс дизайна интерьера. Какой фундамент вы заложите, такой и будет ваш интерьер.
 Для начала работы очень важно познакомиться. Я узнаю ваши предпочтения, пожелания и мечты, чтобы все это воплотить в дальнейшем в ваш интерьер, или рассказать о том, чего следует избегать в вашем случае, а к чему стремиться. Итак, мы начинаем работать.<br><br>
 Мы производим замеры, фотографируем объект, анализируем все существующие коммуникации, и другие особенности объекта. Все данные будут включены в эскизный проект, который поможет наглядно представить будущий интерьер. В него входит планировочное решение, планировочные решения потолков и освещения.<br><br>
 Планировка не зависит от стиля помещения, поэтому проводя планировку своего объекта, вы не должны заботиться о каком-либо другом этапе дизайна: будь то цветовое решение комнаты, её освещение, стиль оформления или что-либо другое. И это, на самом деле, очень хорошо, ведь все ваши силы и энергия будут правильно направлены на решение одной задачи, а не всех сразу. Мы предложим все возможные варианты планировочных решений, все обсудим и выберем наилучшее. А уже на базе грамотной планировки, все оставшиеся этапы проекта будут проходить легко и непринуждённо.<br>
+           {% endifequal %}
 	      </p>
 	    </div>
 	    <div class="tab-pane" id="tab2" style="text-align:left">
 	      <p>
+	  {% ifequal request.LANGUAGE_CODE 'en' %}
+At the second stage, I create 3D room visualization, as it will show the ready interior tridimensional. Here we closely work with style and color, choose and design all the nuances of the future rooms. Visualization is made via computer simulation. This is an effective way to evaluate the result of the design, it will help to avoid unnecessary costs and possible disappointment. Thanks to the interior visualization, you will see finishing materials, worked-though lighting, play of light and shadow, decorative design and other details. I do not create unrealistic furnishings and finishes – everything we see in the visualization will be brought to life with the best result.	  
+          {% else %}
 	      На втором этапе я создаю визуализацию помещений в 3D, именно она покажет в объемном виде каким будет интерьер после реализации. Здесь мы уже вплотную работаем над стилистикой, цветом, выбираем и проектируем все нюансы будущих помещений. Визуализация производится с помощью компьютерного моделирования. Это эффективный способ оценить результат работы над дизайном, она поможет избежать ненужных затрат и возможных разочарований. С помощью визуализации интерьера Вы увидите материалы отделки, проработанное освещение, игру света и тени, декоративное оформление и другие детали. Я не создаю невыполнимых предметов обстановки и отделки, все, что мы видим на визуализации будет воплощено в жизнь с наилучшим результатом. 
+           {% endifequal %}
 	      </p>
 	    </div>
 	    <div class="tab-pane" id="tab3" style="text-align:left">
 	      <p>
+	  {% ifequal request.LANGUAGE_CODE 'en' %}
+After the preliminary version of the interior and its visualization are approved, I proceed to developing the working drawings and plans of the design project. All technical documentation required for constructors is created at this stage. It includes integration of any engineering equipment, redevelopment plan, final selection of finishing materials, furniture placement, plumbing and electrical wiring plan, plan of walls, ceilings and floors, and placement of electrical systems. This service also includes recommendations on finishing materials, furniture, decor and their calculations.	  
+         {% else %}
 	      После того, как предварительный вариант интерьерного решения и его визуализация будут согласованы, я приступаю к разработке рабочих чертежей и планов дизайн-проекта. Вся техническая документация, необходимая для строителей создается на этом этапе. В нее входят: интеграция любого инженерного оборудования, план перепланировки, финальный подбор отделочных материалов, план расстановки мебели и сантехники, разводки электросистем, план стен, потолков и полов.  размещения электротехнических систем. Также данная услуга включает в себя рекомендацию по материалам отделки, предметов мебели, декора и их расчеты.
+           {% endifequal %}
 	      </p>
 	    </div>
 	    <div class="tab-pane" id="tab4" style="text-align:left">
-	      <p>Интеграция инженерных коммуникаций и оборудования – важный этап в работе над дизайн-проектом. К созданию коммуникационных схем относится: кондиционирование, отопление, вентиляция, канализация, пожарная и охранная сигнализация, видеонаблюдение, встраиваемая электронная техника, контроль доступа типа «Умный дом», домашний кинотеатр, камин и многое другое. Я всегда предлагаю решение, исходя из ваших потребностей комфорта. Это подраздел рабочего проекта, где мы с вами прорабатываем комфортное размещение всех систем. С нами сотрудничает большое кол-во компаний, которые при необходимости делают расчет коммуникаций и инженерных систем.
+	      <p>
+	  {% ifequal request.LANGUAGE_CODE 'en' %}
+Integration of engineering communications and equipment is an important stage in the design project. Creating the communication schemes include air conditioning, heating, ventilation, sewerage, fire and burglar alarms, video surveillance, built-in electronic equipment, access guarding of “Smart Home” type, home theater, fireplace and more. I always suggest a decision based on your comfort needs. This is a section of the detail project where we are working with comfortable layout of all systems. We cooperate with a large number of companies that if necessary calculate communications and systems  engineering.         
+{% else %}
+	      Интеграция инженерных коммуникаций и оборудования – важный этап в работе над дизайн-проектом. К созданию коммуникационных схем относится: кондиционирование, отопление, вентиляция, канализация, пожарная и охранная сигнализация, видеонаблюдение, встраиваемая электронная техника, контроль доступа типа «Умный дом», домашний кинотеатр, камин и многое другое. Я всегда предлагаю решение, исходя из ваших потребностей комфорта. Это подраздел рабочего проекта, где мы с вами прорабатываем комфортное размещение всех систем. С нами сотрудничает большое кол-во компаний, которые при необходимости делают расчет коммуникаций и инженерных систем.
+           {% endifequal %}
 </p>
 	    </div>
 	    <div class="tab-pane" id="tab5" style="text-align:left">
 	      <p>
+	  {% ifequal request.LANGUAGE_CODE 'en' %}
+	      In my work I aspire to bring each interior design project to life in the form it was initially conceived. Many nuances of construction and finishing works are solved only in the construction process. We make necessary adjustments, supervise the construction and finishing works, help purchase necessary materials for finishing and lighting, and also  choose furniture and accessories.
+{% else %}
 	      В своей работе я стремлюсь довести каждый объект до конца, чтобы бы реализовать проект дизайна интерьера в том виде, в котором и было задумано. Множество нюансов строительных и отделочных работ решается только в процессе строительства. Мы вносим необходимые корректировки, наблюдаем за ведением строительно-отделочных работ и, помогаем в приобретении необходимых материалов для отделки, освещения, а также выбираем мебель и аксессуары. 
+           {% endifequal %}
 	      </p>
 	    </div>
 	    <div class="tab-pane" id="tab6" style="text-align:left">
 	      <p>
+	  {% ifequal request.LANGUAGE_CODE 'en' %}
+House, apartment, office, store, hotel or shopping center – our projects are always balanced and have their own style, original forms, materials and decor. The most important part is that we know how to bring it to life!
+<br><br>
+It is worth trusting the development of your own home, apartment or office, where you spend most of your time, to skilled professionals. Today, everyone can afford high-quality and beautiful interior design. We offer you services of any price range, from the lowest budget to the most exclusive design and finishing services with the best design solutions.
+<br><br>
+We create stylish personality in every interior!
+{% else %}
 	      Дом, квартира, офис, магазин, отель или торговый центр - наши проекты всегда гармоничны и обладают своим собственным стилем, имеют оригинальные формы, материалы и декор. А главное – мы знаем, как это воплотить в жизнь!<br><br>
 Доверить устройство собственного дома, квартиры или офиса, в котором вы находитесь большую часть вашего времени, стоит опытным специалистам. Сегодня качественный, красивый дизайн помещений доступен каждому. Мы предлагаем вам услуги любого ценового диапазона: от максимально экономичных до эксклюзивных проектных и отделочных работ с использованием лучших дизайнерских решений. <br><br>
 Мы создаем стильную индивидуальность в каждом интерьере!
+           {% endifequal %}
 	      </p>
 	    </div>
 	  </div>
