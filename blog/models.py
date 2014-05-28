@@ -18,6 +18,7 @@ class Term(models.Model):
     termname = models.CharField(_("Term name"), max_length=255, blank=True, default='', help_text = _("Term name"))
     termslug = models.CharField(_("Term slug"), max_length=255, blank=True, default='', help_text = _("Term slug"))
     is_servicecat = models.BooleanField("Service category feature", help_text = "Service category feature")
+    termname_en = models.CharField(_("Term name in English"), max_length=255, blank=True, default='', help_text = _("Term name"))
     
     def __unicode__(self):
         return unicode(self.termname)
