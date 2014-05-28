@@ -39,14 +39,22 @@
 
       <div style="margin-top:30px">
       <span style="font-size:24px;font-weight:500">{{article.publish_date|date:"d"}}</span><br>
+      {% ifequal request.LANGUAGE_CODE 'ru' %}
       {{article.publish_date|ru_strftime:"%B"}}
+      {% else %}
+      {{article.publish_date|date:"F"}}
+      {% endifequal %}
       </div>
       <div style="margin-top:40px;width:800px;text-align:left;">
       <div class="pull-left span2" style="margin-left:0">
       <ul class="nav">
       {% for t in terms %}
        <li style="padding:2px;">
+      {% ifequal request.LANGUAGE_CODE 'ru' %}
        {{ t.termname }}
+       {% else %}
+       {{ t.termname_en }}
+       {% endifequal %}
        </li>
        <!--
        <li style="padding:2px;color:#f5775d">
