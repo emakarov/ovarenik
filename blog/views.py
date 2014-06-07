@@ -109,7 +109,10 @@ def projects(request):
   galleries = Gallery.objects.filter(gallery_articles__in=articles)
   photos = Photo.objects.filter(galleries__in=galleries).order_by('?').select_related('galleries__gallery_articles')
   photos18 = photos[0:18]
-  params = { 'articles' : articles, 'photos' : photos, 'photos18' : photos18 }
+  artph = []
+  for a in articles:
+    artph.append({'slug':a.slug, 'p' : a.cover}) 
+  params = { 'articles' : articles, 'photos' : photos, 'photos18' : photos18, 'artph' : artph }
   return render_to_response(blog_projects_html, params, context_instance = RequestContext(request))
 
 def services(request):

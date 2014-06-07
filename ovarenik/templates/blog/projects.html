@@ -35,43 +35,43 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', en
 
     <div id='map' class="container white-transp-grad" style="overflow: hidden;padding:0;margin:0;width:100%;height:590px;background:#000;position: relative;">
     <div>
-    {% for p in photos18 %}
+    {% for ap in artph %}
     {% if forloop.counter = 1 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='220x180' vid="10" init="-20" style="width:220px;height:180px;left:-20px;position:absolute;top:60px;padding:0" src="{{p.get_220x180_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='220x180' vid="10" init="-20" style="width:220px;height:180px;left:-20px;position:absolute;top:60px;padding:0" src="{{ap.p.get_220x180_url}}" class="img-polaroid">
     {% elif forloop.counter = 2 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='220x180' vid="11" init="-20" style="width:220px;height:180px;left:-20px;position:absolute;top:60px;padding:0;display:none" src="{{p.get_220x180_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='220x180' vid="11" init="-20" style="width:220px;height:180px;left:-20px;position:absolute;top:60px;padding:0;display:none" src="{{ap.p.get_220x180_url}}" class="img-polaroid">
     {% elif forloop.counter = 3 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='140x140' vid="20" init="220" style="width:140px;height:140px;left:180px;position:absolute;top:100px;padding:0" src="{{p.get_140x140_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='140x140' vid="20" init="220" style="width:140px;height:140px;left:180px;position:absolute;top:100px;padding:0" src="{{ap.p.get_140x140_url}}" class="img-polaroid">
     {% elif forloop.counter = 4 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='140x140' vid="21" init="220" style="width:140px;height:140px;left:180px;position:absolute;top:100px;padding:0;display:none" src="{{p.get_140x140_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='140x140' vid="21" init="220" style="width:140px;height:140px;left:180px;position:absolute;top:100px;padding:0;display:none" src="{{ap.p.get_140x140_url}}" class="img-polaroid">
     {% elif forloop.counter = 5 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='140x100' vid="30" init="0" style="width:140px;height:100px;left:-40px;position:absolute;top:260px;padding:0" src="{{p.get_140x100_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='140x100' vid="30" init="0" style="width:140px;height:100px;left:-40px;position:absolute;top:260px;padding:0" src="{{ap.p.get_140x100_url}}" class="img-polaroid">
     {% elif forloop.counter = 6 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='140x100' vid="31" init="0" style="width:140px;height:100px;left:-40px;position:absolute;top:260px;padding:0;display:none" src="{{p.get_140x100_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='140x100' vid="31" init="0" style="width:140px;height:100px;left:-40px;position:absolute;top:260px;padding:0;display:none" src="{{ap.p.get_140x100_url}}" class="img-polaroid">
     {% elif forloop.counter = 7 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='200x160' vid="40" init="160" style="width:200px;height:160px;left:120px;position:absolute;top:260px;padding:0" src="{{p.get_200x160_url}}" class="img-polaroid">
+    <img artid='{ap..slug}}' s='200x160' vid="40" init="160" style="width:200px;height:160px;left:120px;position:absolute;top:260px;padding:0" src="{{ap.p.get_200x160_url}}" class="img-polaroid">
     {% elif forloop.counter = 8 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='200x160' vid="41" init="160" style="width:200px;height:160px;left:120px;position:absolute;top:260px;padding:0;display:none" src="{{p.get_200x160_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='200x160' vid="41" init="160" style="width:200px;height:160px;left:120px;position:absolute;top:260px;padding:0;display:none" src="{{ap.p.get_200x160_url}}" class="img-polaroid">
     {% elif forloop.counter = 9 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='480x300' vid="50" init="380" style="width:480px;height:300px;left:340px;position:absolute;top:80px;padding:0" src="{{p.get_480x300_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='480x300' vid="50" init="380" style="width:480px;height:300px;left:340px;position:absolute;top:80px;padding:0" src="{{ap.p.get_480x300_url}}" class="img-polaroid">
     {% elif forloop.counter = 10 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='480x300' vid="51" init="380" style="width:480px;height:300px;left:340px;position:absolute;top:80px;padding:0;display:none" src="{{p.get_480x300_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='480x300' vid="51" init="380" style="width:480px;height:300px;left:340px;position:absolute;top:80px;padding:0;display:none" src="{{ap.p.get_480x300_url}}" class="img-polaroid">
     {% elif forloop.counter = 11 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='320x200' vid="60" init="880" style="width:320px;height:200px;left:840px;position:absolute;top:60px;padding:0" src="{{p.get_320x200_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='320x200' vid="60" init="880" style="width:320px;height:200px;left:840px;position:absolute;top:60px;padding:0" src="{{ap.p.get_320x200_url}}" class="img-polaroid">
     {% elif forloop.counter = 12 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='320x200'  vid="61" init="880" style="width:320px;height:200px;left:840px;position:absolute;top:60px;padding:0;display:none" src="{{p.get_320x200_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='320x200'  vid="61" init="880" style="width:320px;height:200px;left:840px;position:absolute;top:60px;padding:0;display:none" src="{{ap.p.get_320x200_url}}" class="img-polaroid">
     {% elif forloop.counter = 13 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='320x200'  vid="70" init="880" style="width:320px;height:200px;left:800px;position:absolute;top:280px;padding:0" src="{{p.get_320x200_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='320x200'  vid="70" init="880" style="width:320px;height:200px;left:800px;position:absolute;top:280px;padding:0" src="{{ap.p.get_320x200_url}}" class="img-polaroid">
     {% elif forloop.counter = 14 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='320x200'  vid="71" init="880" style="width:320px;height:200px;left:800px;position:absolute;top:280px;padding:0;display:none" src="{{p.get_320x200_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='320x200'  vid="71" init="880" style="width:320px;height:200px;left:800px;position:absolute;top:280px;padding:0;display:none" src="{{ap.p.get_320x200_url}}" class="img-polaroid">
     {% elif forloop.counter = 15 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='160x100' vid="80" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:300px;padding:0" src="{{p.get_160x100_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='160x100' vid="80" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:300px;padding:0" src="{{ap.p.get_160x100_url}}" class="img-polaroid">
     {% elif forloop.counter = 16 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='160x100' vid="81" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:300px;padding:0;display:none" src="{{p.get_160x100_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='160x100' vid="81" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:300px;padding:0;display:none" src="{{ap.p.get_160x100_url}}" class="img-polaroid">
     {% elif forloop.counter = 17 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='160x100' vid="90" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:180px;padding:0" src="{{p.get_160x100_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='160x100' vid="90" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:180px;padding:0" src="{{ap.p.get_160x100_url}}" class="img-polaroid">
     {% elif forloop.counter = 18 %}
-    <img artid='{{p.galleries.all.0.gallery_articles.all.0.slug}}' s='160x100' vid="91" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:180px;padding:0;display:none" src="{{p.get_160x100_url}}" class="img-polaroid">
+    <img artid='{{ap.slug}}' s='160x100' vid="91" init="1220" style="width:160px;height:100px;left:1140px;position:absolute;top:180px;padding:0;display:none" src="{{ap.p.get_160x100_url}}" class="img-polaroid">
     {% endif %}
     {% endfor %}
     </div>
@@ -178,16 +178,16 @@ if(!(b=e)){var g={height:i.innerHeight,width:i.innerWidth};if(!g.height&&((b=h.c
     }
     
     var pics = [
-     {% for p in photos %}
+     {% for ap in artph %}
      { 
-     	'220x180' : '{{p.get_220x180_url}}',
-     	'140x140' : '{{p.get_140x140_url}}',
-     	'140x100' : '{{p.get_140x100_url}}',
-     	'200x160' : '{{p.get_200x160_url}}',
-     	'480x300' : '{{p.get_480x300_url}}',
-     	'320x200' : '{{p.get_320x200_url}}',
-     	'160x100' : '{{p.get_160x100_url}}',
-     	'artid' : '{{p.galleries.all.0.gallery_articles.all.0.slug}}'
+     	'220x180' : '{{ap.p.get_220x180_url}}',
+     	'140x140' : '{{ap.p.get_140x140_url}}',
+     	'140x100' : '{{ap.p.get_140x100_url}}',
+     	'200x160' : '{{ap.p.get_200x160_url}}',
+     	'480x300' : '{{ap.p.get_480x300_url}}',
+     	'320x200' : '{{ap.p.get_320x200_url}}',
+     	'160x100' : '{{ap.p.get_160x100_url}}',
+     	'artid' : '{{ap.slug}}'
      }{% if not forloop.last %},{% endif %}
      {% endfor %}
     
