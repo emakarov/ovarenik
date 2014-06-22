@@ -46,7 +46,7 @@ border-left: 1px solid #777;
 color: #bbb;
 }
 #brandtop{
-padding: 2px 0 0 34px;
+padding: 8px 0 0 34px;
 position:absolute;
 left:20px;
 }
@@ -83,4 +83,13 @@ top: 0;
 opacity: 0.98;
 z-index: 1;
 display:none;
+}
+
+.navbar .nav {
+position: relative;
+left: 0;
+display: block;
+float: left;
+margin: 4px 10px 0 0;
+font-size: 15px;
 }
