@@ -33,6 +33,8 @@ def sendreply(request):
     message = leadformtemplate.render(c)
     try:
       mail.send_mail(subj, message, "info@varenikolga.ru" , ["evgeni.makarov@gmail.com"] )
+      mail.send_mail(subj, message, "info@varenikolga.ru" , ["olgavarenik@gmail.com"] )
+      mail.send_mail(subj, message, "info@varenikolga.ru" , ["vj.workshop@gmail.com"] )
     except:
       pass
     lead.content = message
