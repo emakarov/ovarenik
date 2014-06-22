@@ -119,7 +119,7 @@ msgstr "Дизайн проект"
 #: ovarenik/settings.py:237 ovarenik/templates/base.html:100
 #: ovarenik/templates/blog/services.html:37
 msgid "Services"
-msgstr "Сервисы"
+msgstr "Услуги"
 
 #: ovarenik/settings.py:238 ovarenik/templates/base.html:103
 #: ovarenik/templates/blog/contacts.html:20
