@@ -243,3 +243,7 @@ CMS_TEMPLATES = (
 )
 
 PHOTOLOGUE_MAXBLOCK = 1024*2**10
+
+LEADS_TEMPLATES = {
+  'phonecall' : 'leads/phonecall.html'
+}

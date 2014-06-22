@@ -117,7 +117,10 @@
     
     <div id="phonecaller" style="position:fixed;top:38px;background:#111111;opacity:0.9;right:0;height:200px;width:300px;color:#fff;padding-top:10px;text-transform:uppercase;display:none;">
       <center>{% trans "When can we call you?" %}
-      <form role="form" style="padding-top:10px">
+      <form role="form" style="padding-top:10px" id="phonecaller">
+      {% csrf_token %}
+      <input type="hidden" name="leadform" value="phonecall">      
+      
       <div class="form-group">
         <input type="text" class="form-control orangecontrol" id="phone_datetime" placeholder="{% trans "Date and time" %}">
       </div>
@@ -148,6 +151,38 @@
     <script type="text/javascript" src="{{STATIC_URL}}bootstrap/js/bootstrap.js"></script>
   {% endblock %}
   {% block extra_bottom_js %}
+  {% endblock %}
+
+  {% block leadscripts %}
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+function sendlead(id){
+  var datasend = $(id).serializeObject();
+  var replyhtml = $(id+"_reply").html();
+  //var valid = $(id).parsley().validate() ;
+  //if ( valid ){
+    $.post('/sendlead/', datasend, function(data) {
+      $(id).html(replyhtml);
+    });
+  //}
+  //else{
+  //  $("#catdescr").css('top', parseInt($("#catdescr").css('top').replace("px",""))+20+"px" )
+  //}
+}   
   {% endblock %}
   <!-- /Yandex.Metrika informer -->
 

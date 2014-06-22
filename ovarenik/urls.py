@@ -20,6 +20,7 @@ urlpatterns += patterns('',
     (r'^services.*$', 'blog.views.services'),
     (r'^$', 'blog.views.index'),
     url(r'^sendreply/$', 'blog.views.sendmail'),
+    url(r'^sendlead/', 'shopleads.views.sendreply'),    
     (r'^(?P<artid>.*)/$', 'blog.views.article'),
 )
 
