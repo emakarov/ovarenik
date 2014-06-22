@@ -39,7 +39,7 @@ margin: 0 0 20px 5px;
 border-left: 1px solid #777;
 }
 .navbar-inverse .navbar-inner {
- min-height:38px;
+ min-height:50px;
 }
 .navbar .nav > li > a {
 //padding: 8px 16px 0px;
