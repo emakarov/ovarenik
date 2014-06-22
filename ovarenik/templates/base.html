@@ -80,6 +80,15 @@
     
     <div id="phonecaller" style="position:fixed;top:38px;background:#111111;opacity:0.9;right:0;height:200px;width:300px;color:#fff;padding-top:10px;text-transform:uppercase;display:none;">
       <center>{% trans "When can we call you?" %}</center>
+      <form role="form">
+      <div class="form-group">
+        <input type="text" class="form-control orangecontrol" id="phone_datetime" placeholder="{% trans "Date and time" %}">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control orangecontrol" id="phone_phonenumber" placeholder="{% trans "Phone" %}">
+      </div>
+
+      </form>
     </div>
   
 
