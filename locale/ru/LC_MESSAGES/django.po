@@ -145,23 +145,23 @@ msgstr "Блог"
 
 #: ovarenik/templates/base.html:119
 msgid "When can we call you?"
-msgstr ""
+msgstr "Когда вам перезвонить?"
 
 #: ovarenik/templates/base.html:125
 msgid "Date and time"
-msgstr ""
+msgstr "Дата и время"
 
 #: ovarenik/templates/base.html:128
 msgid "Phone"
-msgstr ""
+msgstr "Телефон"
 
 #: ovarenik/templates/base.html:132
 msgid "Please call me"
-msgstr ""
+msgstr "Заказать звонок"
 
 #: ovarenik/templates/base.html:135
 msgid "Thanks for your interest!"
-msgstr ""
+msgstr "Спасибо за Ваше обращение!"
 
 #: ovarenik/templates/admin/base.html:69
 msgid "Welcome,"
@@ -282,19 +282,19 @@ msgstr ""
 
 #: shopleads/models.py:6
 msgid "Received"
-msgstr ""
+msgstr "Получено"
 
 #: shopleads/models.py:12
 msgid "Lead"
-msgstr ""
+msgstr "Заявка"
 
 #: shopleads/models.py:13
 msgid "Leads"
-msgstr ""
+msgstr "Заявки"
 
 #: shopleads/views.py:25
 msgid "Request from site"
-msgstr ""
+msgstr "Запрос с сайта"
 
 #: sitemanagement/models.py:19
 msgid "Text inside the block"
